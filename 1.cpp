@@ -1,9 +1,72 @@
+#include <string>
 #include <iostream>
 #include <cmath>
 #include <cstdlib>
 #include <ctime>
 using namespace std;
 
+struct armadura {
+    string nome;
+    int defesa;
+};
+
+struct jogador{
+	string nomeP;
+	int hp;
+	int hf;
+	int hi;
+	int hm;
+};
+
+jogador personagens[4];
+int total_armadura = 2;
+armadura armadura_jogo[5];
+armadura Ainventario[2];    
+bool slot_ocupado[2] = {false, false};
+
+void cadastrar_persona(){
+personagens[0].nomeP = " Luna ";
+personagens[0].hp = 100;
+personagens[0].hf = 75;
+personagens[0].hm =50;
+personagens[0].hi = 80;
+
+personagens[1].nomeP = "Niville Longbotton";
+personagens[1].hp = 100;
+personagens[1].hf = 80;
+personagens[1].hm = 50;
+personagens[1].hi = 60;
+
+personagens[2].nomeP = "Simas Finnigan";
+personagens[2].hp  = 100;
+personagens[2].hf  = 80;
+personagens[2].hm  = 45;
+personagens[2].hi  = 60;
+
+personagens[3].nomeP = "Cedrico Diggory";
+personagens[3].hp  = 100;
+personagens[3].hf  = 90;
+personagens[3].hm = 50;
+personagens[3].hi = 75;
+}
+
+void cadastrar_armadura(){
+armadura_jogo[0].nome = "manto inicial";
+armadura_jogo[0].defesa =  5;
+
+armadura_jogo[1].nome = " tenis voador";
+armadura_jogo[1].defesa = 25;
+
+armadura_jogo[2].nome = "elmo viking";
+armadura_jogo[2].defesa = 15;
+
+armadura_jogo[3].nome = "capa da invisibilidade";
+armadura_jogo[3].defesa = 70;
+
+armadura_jogo[4].nome = "calcinha do dumbledore";
+armadura_jogo[4].defesa = 70;
+
+}
 void mapa_dos_marotos(){
     char mapa [30][60];
     for (int i = 0; i < 30; i++){
@@ -31,15 +94,11 @@ void inicio(){
     cout << " =====================================================" << endl;
 }
 
-void personagens(){
-    cout << endl << endl;
-    cout << "1 - Harry" << endl;
-    cout << "1 - Ron" << endl;
-    cout << "1 - Hermione" << endl;
-    cout << "1 - Sirius Black" << endl;
-    cout << "1 - Severus Snape" << endl;
-    cout << "Informe o personagem escolido: " << endl;
-    cout << " =====================================================" << endl;
+void personagem(){
+	for(int i = 0; i < 4; i++){
+	cout << i + 1 << " - " << personagens[i].nomeP << endl;
+	}
+cout << "escolha os peresonagens";
 }
 
 void ler_historia(int user){
@@ -82,20 +141,11 @@ int mostrar_historia(int opcao_historia){
 
 
 int main (){
+    cadastrar_persona();
     inicio();
-    personagens();
-    int user = 0;
-    cin >> user;
-    if(user != 1 && user != 2 && user != 3 && user != 4 && user != 5){
-        cout << "Ops, opçao invalida!!";
-        return 1;
-    }
-
-    ler_historia(user);
-
-    int opcao_historia = 0;
-    cin >> opcao_historia;
-    mostrar_historia(opcao_historia);
+    personagem();
 
 
 }
+
+
