@@ -259,6 +259,38 @@ void inicio() {
     cout << "              MYSTERY OF HOGWARTS              " << endl;
     cout << "=====================================================" << endl;
 }
+void barra_info(int vida){
+cout << “VIDA” << vida << “/100” << endl;
+}
+
+
+
+void mostrar_historias(){
+int escolha_historia = 0;
+
+    cout << "==========================================" << endl;
+    cout << "||                                      ||" << endl;
+    cout << "||         HISTORIAS DISPONIVEIS        ||" << endl;
+    cout << "||                                      ||" << endl;
+    cout << "||  1. Os instrumentos mortais          ||" << endl;
+    cout << "||  2. Os artificios das trevas         ||" << endl;
+    cout << "||                                      ||" << endl;
+    cout << "==========================================" << endl;
+
+cout << “Informe a escolha da sua casa: “;
+cin >>escolha_historia;
+if(escolha_historia == 1){
+	cout << “História escolhida: Os Instrumentos Mortais”;
+}
+
+else{
+	cout << “História escolhida: Os Artificios das Trevas”;
+}
+
+}
+
+
+
 
 
 int main() {
@@ -270,11 +302,13 @@ int main() {
 int escolha = escolher_persona();
 if (escolha != -1) {
   cout << "Voce escolheu: " << personagens[escolha].nomeP << endl;
+barra_info(personagens[escolha].hp);
 }
 
 
     inicio();
     escolher_casa();
+    mostrar_historias();
 
     return 0;
 }
