@@ -98,7 +98,7 @@ void personagem(){
 	for(int i = 0; i < 4; i++){
 	cout << i + 1 << " - " << personagens[i].nomeP << endl;
 	}
-cout << "escolha os peresonagens";
+cout << "escolha os personagens";
 }
 
 void ler_historia(int user){
