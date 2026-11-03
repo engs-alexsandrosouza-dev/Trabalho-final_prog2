@@ -28,20 +28,16 @@ struct feiticos {
 };
 
 feiticos inventario_feitico[10];
-
 jogador personagens[4];
 
 int total_armadura = 2;
 
 armadura armadura_jogo[5];
-
 armadura Ainventario[2];
 
 bool slot_ocupado[2] = {false, false};
 
-
 void cadastrar_feiticos() {
-
     inventario_feitico[0].name = "Reducto";
     inventario_feitico[0].dano = 0;
     inventario_feitico[0].xp_desbloqueio = 0;
@@ -103,9 +99,7 @@ void cadastrar_feiticos() {
     inventario_feitico[9].desbloqueado = false;
 }
 
-
 void cadastrar_persona() {
-
     personagens[0].nomeP = "Luna";
     personagens[0].hp = 100;
     personagens[0].hf = 75;
@@ -117,6 +111,7 @@ void cadastrar_persona() {
     personagens[1].hf = 80;
     personagens[1].hm = 50;
     personagens[1].hi = 60;
+
 
     personagens[2].nomeP = "Simas Finnigan";
     personagens[2].hp = 100;
@@ -130,10 +125,23 @@ void cadastrar_persona() {
     personagens[3].hm = 50;
     personagens[3].hi = 75;
 }
+int escolher_persona() {
+    int escolha;
+
+    cout << "Escolha seu personagem: 1-Luna, 2-Neville, 3-Simas, 4-Cedrico" << endl;
+    cin >> escolha;
+
+    if (escolha < 1 || escolha > 4) {
+        cout << "Personagem invalido" << endl;
+        return -1;
+    }
+
+    return escolha - 1;
+}
+
 
 
 void cadastrar_armadura() {
-
     armadura_jogo[0].nome = "Manto inicial";
     armadura_jogo[0].defesa = 5;
 
@@ -150,9 +158,7 @@ void cadastrar_armadura() {
     armadura_jogo[4].defesa = 70;
 }
 
-
 void mapa_dos_marotos() {
-
     char mapa[30][60];
 
     for (int i = 0; i < 30; i++) {
@@ -170,9 +176,7 @@ void mapa_dos_marotos() {
     }
 }
 
-
 void escolher_casa() {
-
     char q1, q2, q3, q4;
 
     cout << "Diante de um monstro antigo guardando um tesouro, qual e seu impulso?" << endl;
@@ -180,6 +184,7 @@ void escolher_casa() {
     cout << "b) Estrategia e conhecimento" << endl;
     cout << "c) Atacar pelas sombras" << endl;
     cout << "d) Proteger o grupo" << endl;
+
     cin >> q1;
 
     cout << "Qual relicario escolheria?" << endl;
@@ -187,6 +192,7 @@ void escolher_casa() {
     cout << "b) Um tomo antigo" << endl;
     cout << "c) Adagas silenciosas" << endl;
     cout << "d) Protecao aos aliados" << endl;
+
     cin >> q2;
 
     cout << "Qual virtude guia suas decisoes?" << endl;
@@ -194,6 +200,7 @@ void escolher_casa() {
     cout << "b) Conhecimento" << endl;
     cout << "c) Adaptabilidade" << endl;
     cout << "d) Lealdade" << endl;
+
     cin >> q3;
 
     cout << "Qual caminho escolheria na masmorra?" << endl;
@@ -201,6 +208,7 @@ void escolher_casa() {
     cout << "b) Caminho com runas" << endl;
     cout << "c) Tunel silencioso" << endl;
     cout << "d) Ponte de pedra" << endl;
+
     cin >> q4;
 
     int grif = 0, corv = 0, sons = 0, lufa = 0;
@@ -209,9 +217,7 @@ void escolher_casa() {
     char respostas[4] = {q1, q2, q3, q4};
 
     for (int i = 0; i < 4; i++) {
-
         switch (respostas[i]) {
-
             case 'a':
                 grif++;
                 break;
@@ -248,25 +254,29 @@ void escolher_casa() {
     cout << "====================================" << endl;
 }
 
-
 void inicio() {
-
     cout << "=====================================================" << endl;
-    cout << "                    HARRY POTTER                     " << endl;
+    cout << "              MYSTERY OF HOGWARTS              " << endl;
     cout << "=====================================================" << endl;
 }
 
+
 int main() {
-
     srand(time(0));
-
     cadastrar_feiticos();
     cadastrar_persona();
     cadastrar_armadura();
 
-    inicio();
+int escolha = escolher_persona();
+if (escolha != -1) {
+  cout << "Voce escolheu: " << personagens[escolha].nomeP << endl;
+}
 
+
+    inicio();
     escolher_casa();
 
     return 0;
 }
+
+
