@@ -173,6 +173,125 @@ void mapa_dos_marotos() {
     }
 }
 
+
+void escolher_casa() {
+    char q1, q2, q3, q4;
+
+    cout << "Diante de um monstro antigo guardando um tesouro, qual é o seu primeiro impulso?" << endl;
+    cout << "a) Avançar imediatamente para um combate frontal." << endl;
+    cout << "b) Analisar os padrões da criatura e conjurar um feitiço estratégico." << endl;
+    cout << "c) Desaparecer nas sombras e buscar um ponto cego para atacar." << endl;
+    cout << "d) Posicionar-se à frente do grupo para absorver o primeiro impacto." << endl;
+    cout << "Informe sua resposta (a b c d): " << endl;
+    cin >> q1;
+
+    cout << "Qual relicário você escolheria carregar em sua jornada?" << endl;
+    cout << "a) Uma lâmina lendária forjada em fogo divino." << endl;
+    cout << "b) Um tomo antigo repleto de segredos do cosmos." << endl;
+    cout << "c) Um conjunto de adagas leves imbuídas com veneno silencioso." << endl;
+    cout << "d) A proteção incondicional aos seus aliados." << endl;
+    cout << "Informe sua resposta (a b c d): " << endl;
+    cin >> q2;
+
+    cout << "Qual virtude guia suas decisões nos momentos mais difíceis?" << endl;
+    cout << "a) O destemor diante do perigo." << endl;
+    cout << "b) A busca incansável pela verdade e pelo conhecimento." << endl;
+    cout << "c) A capacidade de se adaptar e superar sem ser notado." << endl;
+    cout << "d) A proteção incondicional aos seus aliados." << endl;
+    cout << "Informe sua resposta (a b c d): " << endl;
+    cin >> q3;
+
+    cout << "Em uma masmorra escura, você encontra quatro caminhos. Qual escolhe seguir?" << endl;
+    cout << "a) O caminho iluminado por tochas flamejantes, onde rugidos ecoam." << endl;
+    cout << "b) A passagem decorada com runas brilhantes e energia mágica." << endl;
+    cout << "c) O túnel estreito e silencioso coberto de sombras." << endl;
+    cout << "d) A ponte de pedra maciça que exige resistência para ser atravessada." << endl;
+    cout << "Informe sua resposta (a b c d): " << endl;
+    cin >> q4;
+
+    int grif = 0, corv = 0, sons = 0, lufa = 0;
+    string casa;
+
+    switch (q1) {
+        case 'a':
+            grif += 1;
+            break;
+        case 'b':
+            corv += 1;
+            break;
+        case 'c':
+            sons += 1;
+            break;
+        case 'd':
+            lufa += 1;
+            break;
+    }
+
+    switch (q2) {
+        case 'a':
+            grif += 1;
+            break;
+        case 'b':
+            corv += 1;
+            break;
+        case 'c':
+            sons += 1;
+            break;
+        case 'd':
+            lufa += 1;
+            break;
+    }
+
+    switch (q3) {
+        case 'a':
+            grif += 1;
+            break;
+        case 'b':
+            corv += 1;
+            break;
+        case 'c':
+            sons += 1;
+            break;
+        case 'd':
+            lufa += 1;
+            break;
+    }
+
+    switch (q4) {
+        case 'a':
+            grif += 1;
+            break;
+        case 'b':
+            corv += 1;
+            break;
+        case 'c':
+            sons += 1;
+            break;
+        case 'd':
+            lufa += 1;
+            break;
+    }
+
+    if (grif >= sons && grif >= lufa && grif >= corv) {
+        casa = "Grifinoria";
+    }
+    else if (corv >= grif && corv >= sons && corv >= lufa) {
+        casa = "Corvinal";
+    }
+    else if (sons >= grif && sons >= corv && sons >= lufa) {
+        casa = "Sonserina";
+    }
+    else {
+        casa = "Lufa-Lufa";
+    }
+
+    cout << "\n====================================" << endl;
+    cout << "Sua casa e: " << casa << endl;
+    cout << "====================================" << endl;
+}
+
+
+
 void inicio() {
 
     cout << " =====================================================" << endl;
