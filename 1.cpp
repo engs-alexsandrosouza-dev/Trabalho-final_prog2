@@ -39,6 +39,7 @@ armadura Ainventario[2];
 
 bool slot_ocupado[2] = {false, false};
 
+
 void cadastrar_feiticos() {
 
     inventario_feitico[0].name = "Reducto";
@@ -47,7 +48,7 @@ void cadastrar_feiticos() {
     inventario_feitico[0].desbloqueado = true;
     inventario_feitico[0].chance_acerto = 85;
 
-    inventario_feitico[1].name = "Estupefaça";
+    inventario_feitico[1].name = "Estupefaca";
     inventario_feitico[1].dano = 20;
     inventario_feitico[1].xp_desbloqueio = 0;
     inventario_feitico[1].desbloqueado = true;
@@ -102,6 +103,7 @@ void cadastrar_feiticos() {
     inventario_feitico[9].desbloqueado = false;
 }
 
+
 void cadastrar_persona() {
 
     personagens[0].nomeP = "Luna";
@@ -128,13 +130,24 @@ void cadastrar_persona() {
     personagens[3].hm = 50;
     personagens[3].hi = 75;
 }
-void mostrar_feitico(){
-cout << “FEITIÇOS”;
-for(int i = 0; i < 10; i++){
-if(inventario_feitico[i].desbloqueado == true){
-cout << inventario_feitico[i].name << endl;
- }
+
+
+void mostrar_feitico() {
+
+    cout << "====================================" << endl;
+    cout << "        FEITICOS DISPONIVEIS        " << endl;
+    cout << "====================================" << endl;
+
+    for (int i = 0; i < 10; i++) {
+
+        if (inventario_feitico[i].desbloqueado == true) {
+            cout << inventario_feitico[i].name << endl;
+        }
+    }
+
+    cout << "====================================" << endl;
 }
+
 
 int escolher_persona() {
 
@@ -144,13 +157,14 @@ int escolher_persona() {
 
     cin >> escolha;
 
-    if (escolha < 1 || escolha > 4) {
+    if (cin.fail() || escolha < 1 || escolha > 4) {
         cout << "Personagem invalido" << endl;
         return -1;
     }
 
     return escolha - 1;
 }
+
 
 void cadastrar_armadura() {
 
@@ -169,6 +183,7 @@ void cadastrar_armadura() {
     armadura_jogo[4].nome = "Calcinha do Dumbledore";
     armadura_jogo[4].defesa = 70;
 }
+
 
 void mapa_dos_marotos() {
 
@@ -189,6 +204,7 @@ void mapa_dos_marotos() {
     }
 }
 
+
 void escolher_casa() {
 
     char q1, q2, q3, q4;
@@ -200,15 +216,6 @@ void escolher_casa() {
     cout << "d) Proteger o grupo" << endl;
 
     cin >> q1;
-
-    if (q1 != 'a' && q1 != 'A' &&
-        q1 != 'b' && q1 != 'B' &&
-        q1 != 'c' && q1 != 'C' &&
-        q1 != 'd' && q1 != 'D') {
-
-        cout << "Opcao invalida!" << endl;
-        exit(1);
-    }
 
     cout << "Qual relicario escolheria?" << endl;
     cout << "a) Uma lamina lendaria" << endl;
@@ -241,6 +248,19 @@ void escolher_casa() {
     char respostas[4] = {q1, q2, q3, q4};
 
     for (int i = 0; i < 4; i++) {
+
+        if (respostas[i] >= 'A' && respostas[i] <= 'D') {
+            respostas[i] = respostas[i] + ('a' - 'A');
+        }
+
+        if (respostas[i] != 'a' &&
+            respostas[i] != 'b' &&
+            respostas[i] != 'c' &&
+            respostas[i] != 'd') {
+
+            cout << "Opcao invalida!" << endl;
+            exit(1);
+        }
 
         switch (respostas[i]) {
 
@@ -280,20 +300,29 @@ void escolher_casa() {
     cout << "====================================" << endl;
 }
 
+
 void inicio() {
 
     cout << "=====================================================" << endl;
-    cout << "              MYSTERY OF HOGWARTS                  " << endl;
+    cout << "              MYSTERY OF HOGWARTS                   " << endl;
     cout << "=====================================================" << endl;
 }
 
+
 void barra_info(int vida, int hm, int hi, int hf) {
 
-    cout << "VIDA" << vida << "/100" << endl;
-    cout << "Habilidade física" << hf << endl;
-    cout << "Intelecto" << hi << endl;
-    cout << "Habilidade mágica" << hm << endl;
+    cout << "====================================" << endl;
+    cout << "         STATUS DO PERSONAGEM       " << endl;
+    cout << "====================================" << endl;
+
+    cout << "Vida: " << vida << "/100" << endl;
+    cout << "Habilidade fisica: " << hf << endl;
+    cout << "Intelecto: " << hi << endl;
+    cout << "Habilidade magica: " << hm << endl;
+
+    cout << "====================================" << endl;
 }
+
 
 int mostrar_historias() {
 
@@ -303,27 +332,34 @@ int mostrar_historias() {
     cout << "||                                      ||" << endl;
     cout << "||         HISTORIAS DISPONIVEIS        ||" << endl;
     cout << "||                                      ||" << endl;
-    cout << "||  1. Os instrumentos mortais           ||" << endl;
-    cout << "||  2. Os artificios das trevas          ||" << endl;
+    cout << "||  1. Os instrumentos mortais          ||" << endl;
+    cout << "||  2. Os artificios das trevas         ||" << endl;
     cout << "||                                      ||" << endl;
     cout << "==========================================" << endl;
 
     cout << "Informe a escolha da sua historia: ";
 
-    cin >> escolha_historia;
+    if (!(cin >> escolha_historia)) {
+        cout << "Opcao invalida!!" << endl;
+        return -1;
+    }
 
     if (escolha_historia == 1) {
-        cout << "Historia escolhida: Os Instrumentos Mortais";
+        cout << "Historia escolhida: Os Instrumentos Mortais" << endl;
     }
     else if (escolha_historia == 2) {
-        cout << "Historia escolhida: Os Artificios das Trevas";
+        cout << "Historia escolhida: Os Artificios das Trevas" << endl;
     }
     else {
-        cout << "Opcao invalida!!";
-        return 1;
+        cout << "Opcao invalida!!" << endl;
+        return -1;
     }
+
+    return escolha_historia;
 }
-void minigame1(jogador p) {
+
+
+void minigame1(jogador &p) {
 
     cout << "====================================" << endl;
     cout << "         INICIO DA AVENTURA         " << endl;
@@ -336,6 +372,7 @@ void minigame1(jogador p) {
     cout << "Vida atual: " << p.hp << endl;
 }
 
+
 int main() {
 
     srand(time(0));
@@ -344,6 +381,8 @@ int main() {
     cadastrar_persona();
     cadastrar_armadura();
 
+    inicio();
+
     int escolha = escolher_persona();
 
     if (escolha != -1) {
@@ -351,21 +390,27 @@ int main() {
         cout << "Voce escolheu: " << personagens[escolha].nomeP << endl;
 
         barra_info(personagens[escolha].hp,
-            personagens[escolha].hi,
-            personagens[escolha].hf,
-            personagens[escolha].hm);
-	mostrar_feitico();
+                   personagens[escolha].hm,
+                   personagens[escolha].hi,
+                   personagens[escolha].hf);
+
+        mostrar_feitico();
+
     }
     else {
         cout << "Opcao invalida!!" << endl;
-        exit(1);
+        return 1;
     }
-
-    inicio();
 
     escolher_casa();
 
-    mostrar_historias();
+    int historia = mostrar_historias();
+
+    if (historia == -1) {
+        return 1;
+    }
+
+    minigame1(personagens[escolha]);
 
     return 0;
 }
