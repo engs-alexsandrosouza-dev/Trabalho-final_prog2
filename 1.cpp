@@ -13,7 +13,7 @@ struct armadura {
 
 struct jogador {
     string nomeP;
-    int hp;
+    int hp; //alterar para double
     int hf;
     int hi;
     int hm;
@@ -23,7 +23,7 @@ struct feiticos {
     string name;
     int dano;
     int xp_desbloqueio;
-    int chance_acerto;
+    int chance_acerto; //float
     bool desbloqueado;
 };
 
