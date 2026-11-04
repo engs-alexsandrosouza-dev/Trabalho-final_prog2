@@ -538,11 +538,25 @@ void minigame_bandido(jogador &p) {
         }
 
         if (vidaBandido <= 0) {
-            break;
-        }
+    break;
+}
 
-        p.hp -= 10;
-        cout << "O Bandido atacou! Voce perdeu 10 HP." << endl;
+// O Bandido tem 70% de chance de acertar -também da pra mudar depois se precisar
+int chanceAtaque = rand() % 100;
+
+if (chanceAtaque < 70) {
+
+    p.hp -= 10;
+
+    cout << "O Bandido acertou o ataque!" << endl;
+    cout << "Voce perdeu 10 HP." << endl;
+
+} else {
+
+    cout << "O Bandido errou o ataque!" << endl;
+    cout << "Voce nao recebeu dano!" << endl;
+
+}
     }
 
     if (p.hp > 0) {
@@ -553,6 +567,106 @@ void minigame_bandido(jogador &p) {
     }
 }
 
+void minigame_trasgo(jogador &p) {
+
+    int vidaTrasgo = 130;
+    int escolhaFeitico;
+    int dano;
+
+    cout << "\n====================================" << endl;
+    cout << "        MINIGAME 2 - TRASGO         " << endl;
+    cout << "====================================" << endl;
+
+    while (p.hp > 0 && vidaTrasgo > 0) {
+
+        cout << "\nSua vida: " << p.hp << endl;
+        cout << "Vida do Trasgo: " << vidaTrasgo << endl;
+
+        cout << "\nEscolha seu feitico:" << endl;
+
+        for (int i = 0; i < 10; i++) {
+            if (inventario_feitico[i].desbloqueado) {
+                cout << i + 1 << " - "
+                     << inventario_feitico[i].name << endl;
+            }
+        }
+
+        cin >> escolhaFeitico;
+
+        if (escolhaFeitico < 1 || escolhaFeitico > 10 ||
+            !inventario_feitico[escolhaFeitico - 1].desbloqueado) {
+            cout << "Feitico invalido!" << endl;
+            continue;
+        }
+
+        feiticos escolhido = inventario_feitico[escolhaFeitico - 1];
+
+        if (rand() % 100 < escolhido.chance_acerto) {
+            dano = escolhido.dano;
+            vidaTrasgo -= dano;
+            cout << "Voce acertou! Dano: " << dano << endl;
+        } else {
+            cout << "O feitico errou!" << endl;
+        }
+
+        if (vidaTrasgo <= 0) {
+    break;
+}
+
+// O Trasgo tem 70% de chance de acertar -da pra mudar depois
+int chanceAtaque = rand() % 100;
+
+if (chanceAtaque < 70) {
+
+    p.hp -= 10;
+
+    cout << "O Trasgo acertou o ataque!" << endl;
+    cout << "Voce perdeu 10 HP." << endl;
+
+} else {
+
+    cout << "O Trasgo errou o ataque!" << endl;
+    cout << "Voce nao recebeu dano!" << endl;
+
+}
+    }
+
+    if (p.hp > 0) {
+
+        cout << "\nVoce derrotou o Trasgo!" << endl;
+
+        adicionar_xp(p, 50);
+
+        if (p.level > 3) {
+
+            bool recebeuElmo = false;
+
+            for (int i = 0; i < 2; i++) {
+
+                if (!slot_ocupado[i]) {
+
+                    Ainventario[i] = armadura_jogo[2];
+                    slot_ocupado[i] = true;
+
+                    recebeuElmo = true;
+                    break;
+                }
+            }
+
+            if (recebeuElmo) {
+                cout << "\nVoce recebeu o Elmo Viking!" << endl;
+            } else {
+                cout << "\nInventario cheio! Elmo nao recebido." << endl;
+            }
+
+        } else {
+            cout << "\nVoce nao possui nivel suficiente para receber o Elmo." << endl;
+        }
+
+    } else {
+        cout << "\nVoce foi derrotado! Fim da campanha." << endl;
+    }
+}
 int main() {
 
     srand(time(0));
@@ -594,7 +708,9 @@ int main() {
         return 1;
     }
     minigame_bandido(personagens[escolha]);
-
+    if (personagens[escolha].hp > 0) {
+        minigame_trasgo(personagens[escolha]);
+    }
 
     return 0;
 }
