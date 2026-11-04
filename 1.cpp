@@ -45,7 +45,7 @@ bool slot_ocupado[2] = {false, false};
 void cadastrar_feiticos() {
 
     inventario_feitico[0].name = "Reducto";
-    inventario_feitico[0].dano = 0;
+    inventario_feitico[0].dano = 10;
     inventario_feitico[0].xp_desbloqueio = 0;
     inventario_feitico[0].desbloqueado = true;
     inventario_feitico[0].chance_acerto = 85;
