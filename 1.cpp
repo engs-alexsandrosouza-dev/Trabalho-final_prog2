@@ -13,17 +13,19 @@ struct armadura {
 
 struct jogador {
     string nomeP;
-    int hp; //alterar para double
+    int hp;
     int hf;
     int hi;
     int hm;
+    int xp;
+	
 };
 
 struct feiticos {
     string name;
     int dano;
     int xp_desbloqueio;
-    int chance_acerto; //float
+    int chance_acerto;
     bool desbloqueado;
 };
 
@@ -111,24 +113,28 @@ void cadastrar_persona() {
     personagens[0].hf = 75;
     personagens[0].hm = 50;
     personagens[0].hi = 80;
+    personagens[0].xp = 0;
 
     personagens[1].nomeP = "Neville Longbottom";
     personagens[1].hp = 100;
     personagens[1].hf = 80;
     personagens[1].hm = 50;
     personagens[1].hi = 60;
+    personagens[1].xp = 0;
 
     personagens[2].nomeP = "Simas Finnigan";
-    personagens[2].hp = 100;
+    personagens[2].hp = 100;	
     personagens[2].hf = 80;
     personagens[2].hm = 45;
     personagens[2].hi = 60;
+    personagens[2].xp = 0;
 
     personagens[3].nomeP = "Cedrico Diggory";
     personagens[3].hp = 100;
     personagens[3].hf = 90;
     personagens[3].hm = 50;
     personagens[3].hi = 75;
+    personagens[3].xp = 0;
 }
 
 
@@ -308,8 +314,7 @@ void inicio() {
     cout << "=====================================================" << endl;
 }
 
-
-void barra_info(int vida, int hm, int hi, int hf) {
+void barra_info(int vida, int hm, int hi, int hf, int xp) {
 
     cout << "====================================" << endl;
     cout << "         STATUS DO PERSONAGEM       " << endl;
@@ -319,6 +324,7 @@ void barra_info(int vida, int hm, int hi, int hf) {
     cout << "Habilidade fisica: " << hf << endl;
     cout << "Intelecto: " << hi << endl;
     cout << "Habilidade magica: " << hm << endl;
+    cout << "Experiencia: " << xp << " XP" << endl;
 
     cout << "====================================" << endl;
 }
@@ -358,8 +364,11 @@ int mostrar_historias() {
     return escolha_historia;
 }
 
+void missaoUm(jogador &p) {
 
-void minigame1(jogador &p) {
+    int vidaInimigo = 30;
+    int escolha;
+    int dano;
 
     cout << "====================================" << endl;
     cout << "         INICIO DA AVENTURA         " << endl;
@@ -367,10 +376,69 @@ void minigame1(jogador &p) {
 
     cout << p.nomeP << " caminhava pelos corredores de Hogwarts." << endl;
 
-    cout << "De repente, um bruxo das trevas apareceu!" << endl;
+    cout << "O ambiente havia mudado drasticamente desde a chegada de voces sabem quem." << endl;
 
-    cout << "Vida atual: " << p.hp << endl;
+    cout << "Eu sempre andava imersa... no meu mundinho." << endl;
+    cout << "Os duendes felizes haviam sumido." << endl;
+    cout << "Culpa dos dementadores. Agora eu era apenas triste." << endl;
+
+    cout << "\nEra estranho." << endl;
+    cout << "Hogwarts continuava sendo Hogwarts." << endl;
+    cout << "As paredes, as escadas, os retratos..." << endl;
+    cout << "Tudo parecia estar no mesmo lugar." << endl;
+    cout << "Mas nada estava realmente ali." << endl;
+
+    cout << "\nEu sentia falta dos meus amigos." << endl;
+    cout << "Harry, Hermione, Roni..." << endl;
+    cout << "Talvez estivessem procurando alguma coisa." << endl;
+    cout << "Espero que tenham encontrado." << endl;
+
+    cout << "\nDe repente, ouvi passos." << endl;
+    cout << "Passos pesados. Nada amigáveis." << endl;
+
+    cout << "\nUm comensal da morte apareceu subitamente!" << endl;
+
+    cout << "\nBruxo: O que faz perambulando pelos corredores?" << endl;
+
+    cout << "\nEu nao sabia muito bem o que responder." << endl;
+    cout << "Talvez estivesse procurando meus pensamentos." << endl;
+    cout << "Eles costumavam fugir de mim." << endl;
+
+    cout << "\nBruxo: RESPONDA!" << endl;
+
+    cout << "\nAcho que ele não gostava de esperar." << endl;
+    cout << "Que sujeito desagradavel." << endl;
+
+    cout << "\n====================================" << endl;
+    cout << "           PRIMEIRO COMBATE         " << endl;
+    cout << "====================================" << endl;
+
+    while (p.hp > 0 && vidaInimigo > 0) {
+
+        cout << "\nSua vida: " << p.hp << endl;
+        cout << "Vida do inimigo: " << vidaInimigo << endl;
+
+        cout << "\nO que deseja fazer?" << endl;
+        cout << "1 - Lancar feitico" << endl;
+        cout << "2 - Defender" << endl;
+        cout << "3 - Tentar fugir" << endl;
+        cout << "Escolha: ";
+        cin >> escolha;
+  if (escolha == 1) {
+
+            dano = 20;
+            vidaInimigo -= dano;
+
+            cout << "\nEu ergui minha varinha." << endl;
+            cout << "Nunca gostei muito de machucar as pessoas." << endl;
+            cout << "Mas algumas pessoas nao deixam muitas escolhas." << endl;
+
+            cout << "\nEstupefaca!" << endl;
+            cout << "O inimigo recebeu " << dano << " de dano!" << endl;
+
+
 }
+
 
 
 int main() {
@@ -392,7 +460,8 @@ int main() {
         barra_info(personagens[escolha].hp,
                    personagens[escolha].hm,
                    personagens[escolha].hi,
-                   personagens[escolha].hf);
+                   personagens[escolha].hf,
+                   personagens[escolha].xp);
 
         mostrar_feitico();
 
@@ -410,7 +479,6 @@ int main() {
         return 1;
     }
 
-    minigame1(personagens[escolha]);
 
     return 0;
 }
