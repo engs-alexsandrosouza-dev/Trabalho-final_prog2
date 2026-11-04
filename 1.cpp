@@ -17,6 +17,8 @@ struct jogador {
     int hf;
     int hi;
     int hm;
+    int xp;
+    int level;
 };
 
 struct feiticos {
@@ -129,8 +131,64 @@ void cadastrar_persona() {
     personagens[3].hf = 90;
     personagens[3].hm = 50;
     personagens[3].hi = 75;
+
+    for (int i = 0; i < 4; i++) {
+        personagens[i].xp = 0;
+        personagens[i].level = 1;
+    }
+}
+void verificar_level(jogador &p) {
+
+    int xpPorNivel[10] = {
+        0, 140, 200, 400, 580,
+        700, 840, 950, 1000, 1200
+    };
+
+    while (p.level < 10 &&
+           p.xp >= xpPorNivel[p.level]) {
+
+        p.level++;
+
+        cout << "\nLEVEL UP! Nivel "
+             << p.level << " alcancado!" << endl;
+
+        int indice = -1;
+
+        switch (p.level) {
+            case 2: indice = 3; break;
+            case 3: indice = 4; break;
+            case 4: indice = 5; break;
+            case 6: indice = 6; break;
+            case 7: indice = 7; break;
+            case 8: indice = 8; break;
+            case 10: indice = 9; break;
+        }
+
+        if (indice != -1) {
+            inventario_feitico[indice].desbloqueado = true;
+
+            cout << "Novo feitico desbloqueado: "
+                 << inventario_feitico[indice].name
+                 << endl;
+        }
+    }
 }
 
+void adicionar_xp(jogador &p, int quantidade) {
+
+    if (quantidade <= 0) {
+        return;
+    }
+
+    p.xp += quantidade;
+
+    cout << "\nXP recebido: "
+         << quantidade << endl;
+
+    cout << "XP total: " << p.xp << endl;
+
+    verificar_level(p);
+}
 
 void mostrar_feitico() {
 
@@ -393,6 +451,11 @@ int main() {
                    personagens[escolha].hm,
                    personagens[escolha].hi,
                    personagens[escolha].hf);
+                   cout << "Level: "
+     << personagens[escolha].level << endl;
+
+cout << "XP: "
+     << personagens[escolha].xp << endl;
 
         mostrar_feitico();
 
