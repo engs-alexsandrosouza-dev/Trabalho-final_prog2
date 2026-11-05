@@ -645,7 +645,7 @@ if (chanceAtaque < 70) {
 
                 if (!slot_ocupado[i]) {
 
-                    Ainventario[i] = armadura_jogo[2];
+                    inventario[i] = armadura_jogo[2];
                     slot_ocupado[i] = true;
 
                     recebeuElmo = true;
@@ -667,6 +667,82 @@ if (chanceAtaque < 70) {
         cout << "\nVoce foi derrotado! Fim da campanha." << endl;
     }
 }
+
+void minigame_pedro(jogador &p) {
+
+    int vidaPedro = 140;
+    int escolhaFeitico;
+    int dano;
+
+    cout << "\n====================================" << endl;
+    cout << "   MINIGAME 3 - PEDRO PETTIGREW    " << endl;
+    cout << "====================================" << endl;
+
+    cout << "\nPedro Pettigrew está tentando fugir!" << endl;
+    cout << "Derrote-o para salvar Bicuço!" << endl;
+
+    while (p.hp > 0 && vidaPedro > 0) {
+
+        cout << "\nSua vida: " << p.hp << endl;
+        cout << "Vida de Pedro: " << vidaPedro << endl;
+
+        cout << "\nEscolha seu feitico:" << endl;
+
+        for (int i = 0; i < 10; i++) {
+            if (inventario_feitico[i].desbloqueado) {
+                cout << i + 1 << " - "
+                     << inventario_feitico[i].name << endl;
+            }
+        }
+
+        cin >> escolhaFeitico;
+
+        if (escolhaFeitico < 1 || escolhaFeitico > 10 ||
+            !inventario_feitico[escolhaFeitico - 1].desbloqueado) {
+            cout << "Feitico invalido!" << endl;
+            continue;
+        }
+
+        feiticos escolhido = inventario_feitico[escolhaFeitico - 1];
+
+        if (rand() % 100 < escolhido.chance_acerto) {
+            dano = escolhido.dano;
+            vidaPedro -= dano;
+
+            cout << "Voce acertou! Dano: " << dano << endl;
+        } else {
+            cout << "O feitico errou!" << endl;
+        }
+
+        if (vidaPedro <= 0) {
+            break;
+        }
+
+        // Pedro tem 70% de chance de acertar - tambem da pra mudar depois 
+        int chanceAtaque = rand() % 100;
+
+        if (chanceAtaque < 70) {
+            p.hp -= 10;
+
+            cout << "Pedro acertou o ataque!" << endl;
+            cout << "Voce perdeu 10 HP." << endl;
+        } else {
+            cout << "Pedro errou o ataque!" << endl;
+            cout << "Voce nao recebeu dano!" << endl;
+        }
+    }
+
+    if (p.hp > 0) {
+        cout << "\nVoce derrotou Pedro Pettigrew!" << endl;
+        cout << "Bicuço foi salvo!" << endl;
+
+        adicionar_xp(p, 70);
+
+    } else {
+        cout << "\nVoce foi derrotado! Fim da campanha." << endl;
+    }
+}
+
 int main() {
 
     srand(time(0));
@@ -708,8 +784,12 @@ int main() {
         return 1;
     }
     minigame_bandido(personagens[escolha]);
+
     if (personagens[escolha].hp > 0) {
         minigame_trasgo(personagens[escolha]);
+    }
+    if (personagens[escolha].hp > 0) {
+        minigame_pedro(personagens[escolha]);
     }
 
     return 0;
