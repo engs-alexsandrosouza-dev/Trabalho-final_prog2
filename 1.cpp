@@ -1173,6 +1173,105 @@ void minigame_dementador(jogador &p) {
     }
 }
 
+void minigame_comensais(jogador &p) {
+
+    int vidaComensais = 200;
+    int escolhaFeitico;
+    int dano;
+
+    cout << "\n====================================" << endl;
+    cout << "  MINIGAME 5 - COMENSAIS DA MORTE  " << endl;
+    cout << "====================================" << endl;
+
+    cout << "\nUm grupo de Comensais da Morte apareceu!" << endl;
+    cout << "Prepare-se para o combate final!" << endl;
+
+    while (p.hp > 0 && vidaComensais > 0) {
+
+        cout << "\nSua vida: " << p.hp << endl;
+        cout << "Vida dos Comensais: " << vidaComensais << endl;
+
+        cout << "\nEscolha seu feitico:" << endl;
+
+        for (int i = 0; i < 10; i++) {
+            if (inventario_feitico[i].desbloqueado) {
+                cout << i + 1 << " - "
+                     << inventario_feitico[i].name << endl;
+            }
+        }
+
+        cin >> escolhaFeitico;
+
+        if (escolhaFeitico < 1 || escolhaFeitico > 10 ||
+            !inventario_feitico[escolhaFeitico - 1].desbloqueado) {
+            cout << "Feitico invalido!" << endl;
+            continue;
+        }
+
+        feiticos escolhido = inventario_feitico[escolhaFeitico - 1];
+
+        if (rand() % 100 < escolhido.chance_acerto) {
+            dano = escolhido.dano;
+            vidaComensais -= dano;
+
+            cout << "Voce acertou! Dano: " << dano << endl;
+        } else {
+            cout << "O feitico errou!" << endl;
+        }
+
+        if (vidaComensais <= 0) {
+            break;
+        }
+
+        // Os Comensais têm 70% de chance de acertar.
+        int chanceAtaque = rand() % 100;
+
+        if (chanceAtaque < 70) {
+            p.hp -= 10;
+
+            cout << "Os Comensais acertaram o ataque!" << endl;
+            cout << "Voce perdeu 10 HP." << endl;
+        } else {
+            cout << "Os Comensais erraram o ataque!" << endl;
+            cout << "Voce nao recebeu dano!" << endl;
+        }
+    }
+
+    if (p.hp > 0) {
+
+        cout << "\nVoce derrotou os Comensais da Morte!" << endl;
+
+        adicionar_xp(p, 120);
+
+        if (p.level >= 8) {
+
+            bool recebeuCapa = false;
+
+            for (int i = 0; i < 2; i++) {
+
+                if (!slot_ocupado[i]) {
+
+                    Ainventario[i] = armadura_jogo[3];
+                    slot_ocupado[i] = true;
+
+                    recebeuCapa = true;
+                    break;
+                }
+            }
+
+            if (recebeuCapa) {
+                cout << "\nVoce recebeu a Capa da Invisibilidade!" << endl;
+            } 
+
+        } else {
+            cout << "\nVoce precisa estar no nivel 8 para receber a Capa da Invisibilidade." << endl;
+        }
+
+    } else {
+        cout << "\nVoce foi derrotado! Fim da campanha." << endl;
+    }
+}
+
 int main() {
     srand(time(0));
 
@@ -1247,6 +1346,9 @@ int main() {
 
     if (personagens[escolha].hp > 0) {
         minigame_dementador(personagens[escolha]);
+    }
+    if (personagens[escolha].hp > 0) {
+        minigame_comensais(personagens[escolha]);
     }
 
     return 0;
