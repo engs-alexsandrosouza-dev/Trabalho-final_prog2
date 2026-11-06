@@ -1184,8 +1184,7 @@ void minigame_comensais(jogador &p) {
     cout << "====================================" << endl;
 
     cout << "\nUm grupo de Comensais da Morte apareceu!" << endl;
-    cout << "Prepare-se para o combate final!" << endl;
-
+    
     while (p.hp > 0 && vidaComensais > 0) {
 
         cout << "\nSua vida: " << p.hp << endl;
