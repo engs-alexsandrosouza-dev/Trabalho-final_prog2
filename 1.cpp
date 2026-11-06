@@ -140,6 +140,43 @@ void cadastrar_persona() {
         personagens[i].level = 1;
     }
 }
+
+void equipar_armadura() {
+
+    int escolha;
+
+    cout << "\n=== ARMADURAS ===" << endl;
+
+    for (int i = 0; i < 2; i++) {
+
+        if (slot_ocupado[i]) {
+            cout << i + 1 << " - "
+                 << Ainventario[i].nome
+                 << " | Defesa: "
+                 << Ainventario[i].defesa
+                 << endl;
+        }
+    }
+
+    cout << "Escolha uma armadura: ";
+    cin >> escolha;
+
+    escolha--;
+
+    if (escolha < 0 || escolha >= 2 ||
+        !slot_ocupado[escolha]) {
+
+        cout << "Armadura invalida!" << endl;
+        return;
+    }
+
+    armadura_equipada = escolha;
+
+    cout << "Armadura equipada: "
+         << Ainventario[armadura_equipada].nome
+         << endl;
+}
+
 void verificar_level(jogador &p) {
 
     int xpPorNivel[10] = {
@@ -176,7 +213,6 @@ void verificar_level(jogador &p) {
         }
     }
 }
-
 void adicionar_xp(jogador &p, int quantidade) {
 
     if (quantidade <= 0) {
@@ -716,7 +752,7 @@ void missaoUm(jogador &p) {
         cout << "          MISSAO 1 CONCLUIDA        " << endl;
         cout << "====================================" << endl;
 
-        adicionar_xp(p, 50);
+        adicionar_xp(p, 120);
 
     } else {
 
@@ -1020,6 +1056,9 @@ int main() {
     if (historia == -1) {
         return 1;
     }
+
+missaoUm(personagens[escolha]);
+
     minigame_bandido(personagens[escolha]);
 
     if (personagens[escolha].hp > 0) {
@@ -1031,5 +1070,7 @@ int main() {
 
     return 0;
 }
+
+
 
 
