@@ -419,23 +419,39 @@ int mostrar_historias() {
     return escolha_historia;
 }
 
+\\Versão Personagem 1 - Luna
 void missaoUm(jogador &p) {
 
-    int vidaInimigo = 30;
+    int vidaInimigo = 55;
     int escolha;
+    int escolhaFeitico;
     int dano;
+    int defesa = 0;
+    int bonusAcerto = 0;
+    bool protegendo = false;
 
+    for (int i = 0; i < 2; i++) {
+        if (slot_ocupado[i]) {
+            defesa += Ainventario[i].defesa;
+        }
+    }
+
+    cout << "\n====================================" << endl;
+    cout << "          MISSAO 1                  " << endl;
+    cout << " OS CORREDORES JA NAO ERAM OS MESMOS" << endl;
     cout << "====================================" << endl;
-    cout << "         INICIO DA AVENTURA         " << endl;
-    cout << "====================================" << endl;
 
-    cout << p.nomeP << " caminhava pelos corredores de Hogwarts." << endl;
+    cout << "\n" << p.nomeP
+         << " caminhava pelos corredores de Hogwarts." << endl;
 
-    cout << "O ambiente havia mudado drasticamente desde a chegada de voces sabem quem." << endl;
+    cout << "\nO ambiente havia mudado drasticamente" << endl;
+    cout << "desde a chegada de voces sabem quem." << endl;
 
-    cout << "Eu sempre andava imersa... no meu mundinho." << endl;
+    cout << "\nEu sempre andava imersa..." << endl;
+    cout << "No meu mundinho." << endl;
     cout << "Os duendes felizes haviam sumido." << endl;
-    cout << "Culpa dos dementadores. Agora eu era apenas triste." << endl;
+    cout << "Culpa dos dementadores." << endl;
+    cout << "Agora eu era apenas triste." << endl;
 
     cout << "\nEra estranho." << endl;
     cout << "Hogwarts continuava sendo Hogwarts." << endl;
@@ -443,57 +459,278 @@ void missaoUm(jogador &p) {
     cout << "Tudo parecia estar no mesmo lugar." << endl;
     cout << "Mas nada estava realmente ali." << endl;
 
-    cout << "\nEu sentia falta dos meus amigos." << endl;
+    cout << "\nSentia falta dos meus amigos." << endl;
     cout << "Harry, Hermione, Roni..." << endl;
     cout << "Talvez estivessem procurando alguma coisa." << endl;
     cout << "Espero que tenham encontrado." << endl;
 
+    cout << "\nNeville dizia que precisavamos resistir." << endl;
+    cout << "Eu concordava." << endl;
+    cout << "Mas resistir a alguma coisa que nao vemos..." << endl;
+    cout << "Parecia mais dificil do que deveria." << endl;
+
     cout << "\nDe repente, ouvi passos." << endl;
-    cout << "Passos pesados. Nada amigáveis." << endl;
+    cout << "Passos pesados. Nada amigaveis." << endl;
 
-    cout << "\nUm comensal da morte apareceu subitamente!" << endl;
+    cout << "\nUm comensal da morte surgiu no corredor!" << endl;
 
-    cout << "\nBruxo: O que faz perambulando pelos corredores?" << endl;
+    cout << "\nComensal: O que faz perambulando por aqui?" << endl;
 
     cout << "\nEu nao sabia muito bem o que responder." << endl;
     cout << "Talvez estivesse procurando meus pensamentos." << endl;
     cout << "Eles costumavam fugir de mim." << endl;
 
-    cout << "\nBruxo: RESPONDA!" << endl;
+    cout << "\nComensal: RESPONDA!" << endl;
 
-    cout << "\nAcho que ele não gostava de esperar." << endl;
+    cout << "\nAcho que ele nao gostava de esperar." << endl;
     cout << "Que sujeito desagradavel." << endl;
 
+    cout << "\nEle ergueu a varinha." << endl;
+    cout << "Acho que conversar nao seria uma opcao." << endl;
+
     cout << "\n====================================" << endl;
-    cout << "           PRIMEIRO COMBATE         " << endl;
+    cout << "          PRIMEIRO COMBATE          " << endl;
     cout << "====================================" << endl;
 
     while (p.hp > 0 && vidaInimigo > 0) {
 
-        cout << "\nSua vida: " << p.hp << endl;
+        cout << "\nVida: " << p.hp << endl;
         cout << "Vida do inimigo: " << vidaInimigo << endl;
+        cout << "Level: " << p.level << endl;
 
         cout << "\nO que deseja fazer?" << endl;
         cout << "1 - Lancar feitico" << endl;
         cout << "2 - Defender" << endl;
-        cout << "3 - Tentar fugir" << endl;
+        cout << "3 - Observar o inimigo" << endl;
         cout << "Escolha: ";
         cin >> escolha;
-  if (escolha == 1) {
 
-            dano = 20;
-            vidaInimigo -= dano;
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cout << "Escolha invalida!" << endl;
+            continue;
+        }
+
+        protegendo = false;
+
+      
+        if (escolha == 1) {
+
+            cout << "\n====================================" << endl;
+            cout << "       FEITICOS DISPONIVEIS         " << endl;
+            cout << "====================================" << endl;
+
+            for (int i = 0; i < 10; i++) {
+
+                if (inventario_feitico[i].desbloqueado) {
+
+                    cout << i + 1 << " - "
+                         << inventario_feitico[i].name
+                         << " | Dano: "
+                         << inventario_feitico[i].dano
+                         << endl;
+                }
+            }
+
+            cout << "\nEscolha seu feitico: ";
+            cin >> escolhaFeitico;
+
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(10000, '\n');
+                cout << "Feitico invalido!" << endl;
+                continue;
+            }
+
+            int indice = escolhaFeitico - 1;
+
+            if (indice < 0 || indice >= 10 ||
+                !inventario_feitico[indice].desbloqueado ||
+                p.xp < inventario_feitico[indice].xp_desbloqueio) {
+
+                cout << "\nFeitico indisponivel!" << endl;
+                continue;
+            }
+
+            feiticos escolhido = inventario_feitico[indice];
+
+            // Habilidade magica influencia o acerto
+            int chanceFinal = escolhido.chance_acerto
+                              + p.hm / 10
+                              + bonusAcerto;
+
+            if (chanceFinal > 100) {
+                chanceFinal = 100;
+            }
 
             cout << "\nEu ergui minha varinha." << endl;
-            cout << "Nunca gostei muito de machucar as pessoas." << endl;
-            cout << "Mas algumas pessoas nao deixam muitas escolhas." << endl;
+            cout << "Nunca gostei muito de machucar pessoas." << endl;
+            cout << "Mas algumas nao deixam muitas escolhas." << endl;
 
-            cout << "\nEstupefaca!" << endl;
-            cout << "O inimigo recebeu " << dano << " de dano!" << endl;
+            cout << "\n" << escolhido.name << "!" << endl;
 
-  }
-}
+            if (rand() % 100 < chanceFinal) {
+
+                dano = escolhido.dano;
+                vidaInimigo -= dano;
+
+                if (vidaInimigo < 0) {
+                    vidaInimigo = 0;
+                }
+
+                cout << "\nO feitico acertou!" << endl;
+                cout << "Dano causado: " << dano << endl;
+
+                cout << "\nTalvez eu fosse melhor nisso" << endl;
+                cout << "do que imaginava." << endl;
+
+            } else {
+
+                cout << "\nO feitico errou!" << endl;
+
+                cout << "Minha mira nao parecia muito boa." << endl;
+                cout << "Ou talvez ele estivesse se mexendo demais." << endl;
+            }
+
+            bonusAcerto = 0;
+        }
+
+
+        else if (escolha == 2) {
+
+            protegendo = true;
+
+            cout << "\nProtego!" << endl;
+
+            cout << "Uma barreira surgiu diante de mim." << endl;
+            cout << "Era bom saber que algumas coisas" << endl;
+            cout << "ainda funcionavam." << endl;
+        }
+
+        else if (escolha == 3) {
+
+            cout << "\nParei por alguns instantes." << endl;
+            cout << "Ele parecia nervoso." << endl;
+            cout << "Pessoas nervosas costumam errar." << endl;
+
+            // Intelecto aumenta a chance do proximo feitico
+            bonusAcerto = p.hi / 4;
+
+            cout << "\nVoce analisou o adversario!" << endl;
+            cout << "Bonus de acerto no proximo feitico: "
+                 << bonusAcerto << "%" << endl;
+        }
+
+        else {
+            cout << "\nEscolha invalida!" << endl;
+            continue;
+        }
+
+    
+        if (vidaInimigo > 0) {
+
+            cout << "\nO comensal apontou sua varinha!" << endl;
+
+            int chanceInimigo = rand() % 100;
+
+            // Habilidade fisica ajuda a escapar
+            int chanceDesvio = p.hf / 4;
+
+            if (chanceInimigo < chanceDesvio) {
+
+                cout << "\nConsegui desviar do feitico!" << endl;
+                cout << "Por pouco. Muito pouco." << endl;
+
+            } else {
+
+                dano = 12;
+
+                if (protegendo) {
+                    dano = dano / 2;
+                }
+
+                // Armadura diminui o dano
+                dano -= defesa / 10;
+
+                if (dano < 0) {
+                    dano = 0;
+                }
+
+                p.hp -= dano;
+
+                if (p.hp < 0) {
+                    p.hp = 0;
+                }
+
+                cout << "\nO inimigo acertou!" << endl;
+                cout << "Dano recebido: " << dano << endl;
+
+                if (protegendo) {
+
+                    cout << "\nMinha protecao funcionou." << endl;
+                    cout << "Nao perfeitamente." << endl;
+                    cout << "Mas funcionou." << endl;
+
+                } else {
+
+                    cout << "\nIsso nao foi agradavel." << endl;
+                    cout << "Definitivamente nao." << endl;
+                }
+            }
+        }
     }
+
+
+    if (p.hp > 0) {
+
+        cout << "\n====================================" << endl;
+        cout << "         COMBATE ENCERRADO          " << endl;
+        cout << "====================================" << endl;
+
+        cout << "\nO comensal caiu desacordado." << endl;
+
+        cout << "Fiquei olhando por alguns instantes." << endl;
+        cout << "Nao parecia tao assustador agora." << endl;
+
+        cout << "\nTalvez as pessoas fossem assim." << endl;
+        cout << "Muito barulho para esconder alguma coisa." << endl;
+
+        cout << "\nContinuei caminhando." << endl;
+
+        cout << "Hogwarts ainda estava triste." << endl;
+        cout << "Mas talvez nao precisasse continuar assim." << endl;
+
+        cout << "\nOuvi alguem chamando meu nome." << endl;
+        cout << "Era Neville." << endl;
+
+        cout << "\nNeville: Precisamos conversar." << endl;
+        cout << "Neville: Algumas coisas estao acontecendo." << endl;
+
+        cout << "\nEu pensei em perguntar quais." << endl;
+        cout << "Mas acho que ja sabia." << endl;
+
+        cout << "\nA resistencia estava apenas comecando." << endl;
+
+        cout << "\n====================================" << endl;
+        cout << "          MISSAO 1 CONCLUIDA        " << endl;
+        cout << "====================================" << endl;
+
+        adicionar_xp(p, 50);
+
+    } else {
+
+        cout << "\nMinha visao ficou turva." << endl;
+        cout << "Acho que deveria ter prestado" << endl;
+        cout << "mais atencao." << endl;
+
+        cout << "\nMISSAO 1 FALHOU!" << endl;
+    }
+}
+
+
+
+
 
 void minigame_bandido(jogador &p) {
 
@@ -794,4 +1031,6 @@ int main() {
 
     return 0;
 }
+
+
 
