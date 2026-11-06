@@ -419,7 +419,7 @@ int mostrar_historias() {
     return escolha_historia;
 }
 
-\\Versão Personagem 1 - Luna
+//Versão Personagem 1 - Luna
 void missaoUm(jogador &p) {
 
     int vidaInimigo = 55;
@@ -882,7 +882,7 @@ if (chanceAtaque < 70) {
 
                 if (!slot_ocupado[i]) {
 
-                    inventario[i] = armadura_jogo[2];
+                   Ainventario[i] = armadura_jogo[2];
                     slot_ocupado[i] = true;
 
                     recebeuElmo = true;
@@ -1031,6 +1031,5 @@ int main() {
 
     return 0;
 }
-
 
 
