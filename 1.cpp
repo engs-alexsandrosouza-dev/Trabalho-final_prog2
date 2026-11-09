@@ -1346,6 +1346,87 @@ void batalha_voldemort(jogador &p) {
     	cout << "\nVoce foi derrotado por Voldemort!" << endl;
 	}
 }
+void batalha_ranrok(jogador &p) {
+
+    int vidaRanrok = 300;
+    int escolhaFeitico;
+    int dano;
+
+    cout << "\n====================================" << endl;
+    cout << "        BATALHA FINAL - RANROK      " << endl;
+    cout << "====================================" << endl;
+
+    cout << "\nRanrok desperta com todo seu poder." << endl;
+
+    while (p.hp > 0 && vidaRanrok > 0) {
+
+        cout << "\nSua vida: " << p.hp << endl;
+        cout << "Vida de Ranrok: " << vidaRanrok << endl;
+
+        cout << "\nEscolha seu feitico:" << endl;
+
+        for (int i = 0; i < 10; i++) {
+
+            if (inventario_feitico[i].desbloqueado) {
+
+                cout << i + 1 << " - "
+                     << inventario_feitico[i].name
+                     << " | Dano: "
+                     << inventario_feitico[i].dano
+                     << endl;
+            }
+        }
+
+        cin >> escolhaFeitico;
+
+        if (escolhaFeitico < 1 ||
+            escolhaFeitico > 10 ||
+            !inventario_feitico[escolhaFeitico - 1].desbloqueado) {
+
+            cout << "\nFeitico invalido!" << endl;
+            continue;
+        }
+
+        feiticos escolhido =
+        inventario_feitico[escolhaFeitico - 1];
+
+        if (rand() % 100 < escolhido.chance_acerto) {
+
+            dano = escolhido.dano;
+
+            vidaRanrok -= dano;
+
+            cout << "\nVoce acertou!" << endl;
+            cout << "Dano causado: " << dano << endl;
+        }
+        else {
+
+            cout << "\nO feitico falhou!" << endl;
+        }
+
+        if (vidaRanrok <= 0)
+            break;
+
+        p.hp -= 15;
+
+        cout << "\nRanrok atacou!" << endl;
+        cout << "Voce recebeu 15 de dano." << endl;
+    }
+
+    if (p.hp > 0) {
+
+        cout << "\n====================================" << endl;
+        cout << "         RANROK DERROTADO           " << endl;
+        cout << "====================================" << endl;
+
+        adicionar_xp(p, 1000);
+    }
+    else {
+
+        cout << "\nVoce foi derrotado por Ranrok!" << endl;
+    }
+}
+
 
 
 int main() {
