@@ -1508,6 +1508,64 @@ int main() {
         minigame_comensais(personagens[escolha]);
     }
 
+    if (personagens[escolha].hp > 0) {
+
+    int chefeFinal;
+
+    cout << "\n====================================" << endl;
+    cout << "            CHEFE FINAL            " << endl;
+    cout << "====================================" << endl;
+    cout << "1 - Voldemort" << endl;
+    cout << "2 - Ranrok" << endl;
+    cout << "Escolha: ";
+
+    cin >> chefeFinal;
+
+    if (chefeFinal == 1) {
+
+        batalha_voldemort(personagens[escolha]);
+
+        if (personagens[escolha].hp > 0) {
+
+            cout << "\n====================================" << endl;
+            cout << "            FINAL BOM             " << endl;
+            cout << "====================================" << endl;
+
+            cout << "Voldemort foi derrotado." << endl;
+            cout << "Hogwarts foi salva." << endl;
+        }
+
+    } else if (chefeFinal == 2) {
+
+        batalha_ranrok(personagens[escolha]);
+
+        if (personagens[escolha].hp > 0) {
+
+            cout << "\n====================================" << endl;
+            cout << "            FINAL BOM             " << endl;
+            cout << "====================================" << endl;
+
+            cout << "Ranrok foi derrotado." << endl;
+            cout << "Voce se tornou uma lenda." << endl;
+        }
+
+    } else {
+
+        cout << "Opcao invalida!" << endl;
+    }
+
+    if (personagens[escolha].hp <= 0) {
+
+        cout << "\n====================================" << endl;
+        cout << "            GAME OVER             " << endl;
+        cout << "====================================" << endl;
+
+        cout << "As trevas venceram Hogwarts." << endl;
+    }
+}
+
     return 0;
 }
+
+
 
