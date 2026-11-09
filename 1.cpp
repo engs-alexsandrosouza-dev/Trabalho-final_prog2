@@ -1270,6 +1270,83 @@ void minigame_comensais(jogador &p) {
         cout << "\nVoce foi derrotado! Fim da campanha." << endl;
     }
 }
+void batalha_voldemort(jogador &p) {
+	int vidaVoldemort = 250;
+	int escolhaFeitico;
+	int dano;
+
+	cout << "\n==================================== " << endl;
+	cout << "  	BATALHA FINAL - VOLDEMORT          	" << endl;
+	cout << "====================================   " << endl;
+
+	cout << "\nVoldemort apareceu diante de voce." << endl;
+	cout << "O destino de Hogwarts depende desta batalha." << endl;
+
+	while (p.hp > 0 && vidaVoldemort > 0) {
+
+    	cout << "\nSua vida: " << p.hp << endl;
+    	cout << "Vida de Voldemort: " << vidaVoldemort << endl;
+    	cout << "\nEscolha seu feitico:" << endl;
+
+    	for (int i = 0; i < 10; i++) {
+
+        	if (inventario_feitico[i].desbloqueado) {
+            	cout << i + 1 << " - "
+                 	<< inventario_feitico[i].name
+                 	<< " | Dano: "
+                 	<< inventario_feitico[i].dano
+                 	<< endl;
+        	}
+    	}
+    	cin >> escolhaFeitico;
+
+    	if (escolhaFeitico < 1 ||
+        	    escolhaFeitico > 10 ||
+
+        	!inventario_feitico[escolhaFeitico - 1].desbloqueado) {
+
+        	cout << "\nFeitico invalido!" << endl;
+        	continue;
+
+    	}
+    	feiticos escolhido =
+        	inventario_feitico[escolhaFeitico - 1];
+
+    	if (rand() % 100 < escolhido.chance_acerto) {
+
+        	dano = escolhido.dano;
+        	vidaVoldemort -= dano;
+
+        	cout << "\nVoce acertou "
+             	<< escolhido.name
+             	<< "!" << endl;
+        	cout << "Dano causado: "
+             	<< dano << endl;
+    	}
+    	else {
+        	cout << "\nO feitico falhou!" << endl;
+
+    	}
+
+    	if (vidaVoldemort <= 0)
+        	break;
+    	p.hp -= 20;
+    	cout << "\nVoldemort atacou!" << endl;
+    	cout << "Voce recebeu 20 de dano." << endl;
+
+	}
+
+	if (p.hp > 0) {
+    	cout << "\n====================================" << endl;
+    	cout << "   	VOLDEMORT DERROTADO      	" << endl;
+    	cout << "====================================" << endl;
+    	adicionar_xp(p, 1000);
+	}
+	else {
+    	cout << "\nVoce foi derrotado por Voldemort!" << endl;
+	}
+}
+
 
 int main() {
     srand(time(0));
