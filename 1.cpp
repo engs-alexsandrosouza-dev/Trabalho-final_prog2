@@ -487,3 +487,193 @@ void liberarFila() {
     while (desenfileirarEvento(ignorado)) {
     }
 }
+// ==========================================================
+// 6. ARVORE BINARIA - BAUS
+// ==========================================================
+// R8 - Arvore binaria de busca de baus; insercao/busca/in-ordem.
+struct NoBau {
+    int chave;
+    string premio;
+    bool coletado = false;
+    NoBau* esq;
+    NoBau* dir;
+};
+NoBau* raizBaus = nullptr;
+// Inserir bau.
+NoBau* inserirBau(NoBau* raiz, int chave, const string& premio) {
+    if (raiz == nullptr) {
+        return new NoBau{chave, premio, false, nullptr, nullptr};
+    }
+    if (chave < raiz->chave) {
+        raiz->esq = inserirBau(raiz->esq, chave, premio);
+    }
+    else if (chave > raiz->chave) {
+        raiz->dir = inserirBau(raiz->dir, chave, premio);
+    }
+    return raiz;
+}
+
+// Buscar bau.
+NoBau* buscarBau(NoBau* raiz, int chave, int& buscas) {
+    if (raiz == nullptr) {
+        return nullptr;
+    }
+    ++buscas;
+    if (raiz->chave == chave) {
+        return raiz;
+    }
+    if (chave < raiz->chave) {
+        return buscarBau(raiz->esq, chave, buscas);
+    }
+    return buscarBau(raiz->dir, chave, buscas);
+}
+
+// Imprimir baus ordem.
+void imprimirBausOrdem(NoBau* raiz) {
+    if (raiz == nullptr) {
+        return;
+    }
+    imprimirBausOrdem(raiz->esq);
+    cout << raiz->chave << " ";
+    imprimirBausOrdem(raiz->dir);
+}
+
+// Libera a arvore em pos-ordem e anula os ponteiros.
+void liberarBaus(NoBau*& raiz) {
+    if (raiz == nullptr) {
+        return;
+    }
+    liberarBaus(raiz->esq);
+    liberarBaus(raiz->dir);
+    delete raiz;
+    raiz = nullptr;
+}
+// ==========================================================
+// 7. ORDENACAO E BUSCA
+// ==========================================================
+// R9 - Insertion sort manual, O(n^2) no pior caso; O(n) no melhor.
+// Ordena por dano com Insertion Sort (O(n^2), melhor O(n)).
+void ordenarFeiticosPorDano(feiticos itens[], int n) {
+    for (int i = 1; i < n; ++i) {
+        feiticos chave = itens[i];
+        int j = i - 1;
+        while (j >= 0 && itens[j].dano > chave.dano) {
+            itens[j + 1] = itens[j];
+            --j;
+        }
+        itens[j + 1] = chave;
+    }
+}
+// R3 - Quick sort recursivo adicional, demonstrando recursividade.
+// Ordena recursivamente por pivo (medio O(n log n), pior O(n^2)).
+void quickSortDanos(int itens[], int inicio, int fim) {
+    if (inicio >= fim) {
+        return;
+    }
+    // O ultimo elemento e o pivo. pos marca onde colocar os valores menores.
+    int pivo = itens[fim];
+    int pos = inicio;
+    for (int i = inicio; i < fim; ++i) {
+        if (itens[i] <= pivo) {
+            int temp = itens[pos];
+            itens[pos] = itens[i];
+            itens[i] = temp;
+            pos++;
+        }
+    }
+    int temp = itens[pos];
+    itens[pos] = itens[fim];
+    itens[fim] = temp;
+    quickSortDanos(itens, inicio, pos - 1);
+    quickSortDanos(itens, pos + 1, fim);
+}
+// R10 - buscas sequencial O(n) e binaria O(log n); contadores.
+// Percorre o vetor contando comparacoes.
+int buscarSequencial(const feiticos a[], int n, int dano, int& ops) {
+    ops = 0;
+    for (int i = 0; i < n; ++i) {
+        ++ops;
+        if (a[i].dano == dano) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+// Busca dano em vetor ordenado contando comparacoes.
+int buscarBinaria(const feiticos a[], int n, int dano, int& ops) {
+    ops = 0;
+    int e = 0;
+    int d = n - 1;
+    while (e <= d) {
+        int meio = e + (d - e) / 2;
+        ++ops;
+        if (a[meio].dano == dano) {
+            return meio;
+        }
+        if (a[meio].dano < dano) {
+            e = meio + 1;
+        }
+        else {
+            d = meio - 1;
+        }
+    }
+    return -1;
+}
+
+// Demonstra Quick Sort recursivo.
+void demonstrarQuickSort() {
+    int valores[10];
+    for (int i = 0; i < 10; ++i) {
+        valores[i] = inventario_feitico[i].dano;
+    }
+    quickSortDanos(valores, 0, 9);
+    cout << "Quick sort recursivo (danos): ";
+    for (int i = 0; i < 10; i++) {
+        cout << valores[i] << " ";
+    }
+    cout << "" << endl;
+}
+
+// Demonstrar ordenacao busca.
+void demonstrarOrdenacaoBusca() {
+    // Demonstra remocao e reinsercao sem alterar o inventario do jogador.
+    if (removerFeiticoLista("Reducto")) {
+        inserirFeiticoLista(inventario_feitico[0]);
+    }
+    feiticos copia[10];
+    for (int i = 0; i < 10; ++i) {
+        copia[i] = inventario_feitico[i];
+    }
+    ordenarFeiticosPorDano(copia, 10);
+    cout << "\n====================================" << endl;
+    cout << "    FEITICOS ORDENADOS POR DANO     " << endl;
+    cout << "====================================" << endl;
+    for (int i = 0; i < 10; i++) {
+        cout << copia[i].name << ": " << copia[i].dano << "" << endl;
+    }
+    int dano = copia[7].dano;
+    int a = 0;
+    int b = 0;
+    int pos1 = buscarSequencial(copia, 10, dano, a);
+    int pos2 = buscarBinaria(copia, 10, dano, b);
+    cout << "Busca pelo dano " << dano << ": sequencial=" << a
+         << " comparacoes (indice " << pos1 << "), binaria=" << b
+         << " comparacoes (indice " << pos2 << ").\n";
+    demonstrarQuickSort();
+}
+
+// Valida uma escolha numerica dentro do intervalo.
+int lerOpcao(int minimo, int maximo) {
+    string linha;
+    int valor;
+    char sobra;
+    while (getline(cin >> ws, linha)) {
+        istringstream entrada(linha);
+        if ((entrada >> valor) && !(entrada >> sobra) && valor >= minimo && valor <= maximo) {
+            return valor;
+        }
+        cout << "Escolha um numero entre " << minimo << " e " << maximo << ": ";
+    }
+    throw runtime_error("Entrada encerrada.");
+}
