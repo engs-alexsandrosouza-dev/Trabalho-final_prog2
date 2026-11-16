@@ -411,3 +411,79 @@ void empilharAcao(const string& texto) {
     // O novo no aponta para o antigo topo: o ultimo entra e sai primeiro.
     topoAcao = new NoAcao{texto, topoAcao};
 }
+
+// Desempilhar acao.
+bool desempilharAcao(string& texto) {
+    if (topoAcao == nullptr) {
+        return false;
+    }
+    NoAcao* antigo = topoAcao;
+    texto = antigo->descricao;
+    topoAcao = topoAcao->prox;
+    delete antigo;
+    antigo = nullptr;
+    return true;
+}
+
+// Mostrar historico.
+void mostrarHistorico() {
+    cout << "\n====================================" << endl;
+    cout << "             HISTORICO              " << endl;
+    cout << "====================================" << endl;
+    cout << "Mais recente primeiro:" << endl;
+    for (NoAcao* n = topoAcao; n != nullptr; n = n->prox) {
+        cout << "- " << n->descricao << "" << endl;
+    }
+}
+
+// Liberar pilha.
+void liberarPilha() {
+    string descartado;
+    while (desempilharAcao(descartado)) {
+    }
+}
+// ==========================================================
+// 5. FILA - EVENTOS
+// ==========================================================
+// R7 - Fila: eventos sao atendidos na ordem em que aparecem (FIFO).
+struct NoEvento {
+    int indice;
+    NoEvento* prox;
+};
+NoEvento* frenteEvento = nullptr;
+NoEvento* trasEvento = nullptr;
+// Enfileirar evento.
+void enfileirarEvento(int id) {
+    // O evento entra no final da fila e sai pela frente.
+    NoEvento* novo = new NoEvento{id, nullptr};
+    if (trasEvento != nullptr) {
+        trasEvento->prox = novo;
+    }
+    else {
+        frenteEvento = novo;
+    }
+    trasEvento = novo;
+}
+
+// Desenfileirar evento.
+bool desenfileirarEvento(int& id) {
+    if (frenteEvento == nullptr) {
+        return false;
+    }
+    NoEvento* antigo = frenteEvento;
+    id = antigo->indice;
+    frenteEvento = antigo->prox;
+    if (frenteEvento == nullptr) {
+        trasEvento = nullptr;
+    }
+    delete antigo;
+    antigo = nullptr;
+    return true;
+}
+
+// Liberar fila.
+void liberarFila() {
+    int ignorado;
+    while (desenfileirarEvento(ignorado)) {
+    }
+}
