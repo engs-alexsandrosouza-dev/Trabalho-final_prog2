@@ -677,6 +677,7 @@ int lerOpcao(int minimo, int maximo) {
     }
     throw runtime_error("Entrada encerrada.");
 }
+
 // ==========================================================
 // 8. CONTROLE DE TELA - WINDOWS
 // ==========================================================
@@ -785,7 +786,6 @@ void mapa_dos_marotos() {
 void mostrarMapaAtual() {
     mapa_dos_marotos();
 }
-
 
 // Mostrar painel.
 void mostrarPainel(const jogador& p) {
@@ -911,6 +911,7 @@ void consumirItem(jogador& p) {
     empilharAcao("Utilizou item " + to_string(item));
     cout << "Vida atual: " << p.hp << "" << endl;
 }
+
 // Pausa professor.
 void pausaProfessor(jogador& p) {
     cout << "\n" << (p.nomeP == "Neville Longbottom" ? "Luna" : "Neville") << ": Quer continuar ou procurar o professor?\n"
@@ -1125,7 +1126,6 @@ void reacaoCombate(const jogador& p, int acao) {
     };
     cout << p.nomeP << ": " << falas[indicePersonagem(p)][acao] << endl;
 }
-
 
 // Menu combate.
 int menuCombate(const jogador& p, const inimigo& oponente) {
@@ -1631,7 +1631,6 @@ Narrativa cenas[11][4] = {
             "Restaurei o selo sem negar essa história. Ao sair, decidi que proteger Hogwarts também significava questionar seus erros."}
     }
 };
-
 string titulos[] = {
     "O castelo que esqueceu de sorrir",
     "O preço da passagem",
@@ -1870,7 +1869,7 @@ Conversa conversas[11][4][2] = {
             }
         }
     },
- // Missao 2
+    // Missao 2
     {
         // Luna
         {
@@ -2119,7 +2118,7 @@ Conversa conversas[11][4][2] = {
                 "Neville: Preciso proteger o castelo agora.\nHagrid: Cuidado, garoto."
             }
         },
- // Simas
+        // Simas
         {
             {
                 "Hagrid: Parece um fantasma, mas nao e.",
@@ -2226,149 +2225,6 @@ Conversa conversas[11][4][2] = {
         }
     },
     // Minigame 4
-    {
-        // Luna
-        {
-            {
-                "Professor: Qual lembranca ajuda a afastar o frio?",
-                "Conversar sobre a mae.",
-                "Luna: Ela me ensinou a procurar beleza no inesperado.\nProfessor: Guarde essa lembranca.",
-                "Recordar as tardes com amigos.",
-                "Luna: Quando conversamos, o mundo fica menos estranho.\nProfessor: Isso pode ajudar."
-            },
-            {
-                "Professor: O frio passou.",
-                "Perguntar se ele tambem sentiu medo.",
-                "Luna: Nao precisa esconder de mim.\nProfessor: Todos sentimos, Luna.",
-                "Agradecer pela companhia.",
-                "Luna: Foi bom nao ouvir apenas o silencio.\nProfessor: Voce nao estava sozinha."
-            }
-        },
-        // Neville
-        {
-            {
-                "Professor: Nao precisa fingir coragem.",
-                "Falar sobre os pais.",
-                "Neville: Quero continuar tentando por eles.\nProfessor: E por voce tambem.",
-                "Lembrar a Sala Precisa.",
-                "Neville: Meus amigos me esperaram mesmo quando duvidei.\nProfessor: Confie nessa lembranca."
-            },
-            {
-                "Professor: A passagem esta livre.",
-                "Admitir o medo.",
-                "Neville: Ainda estou assustado.\nProfessor: E mesmo assim voce continuou.",
-                "Agradecer pela orientacao.",
-                "Neville: Agora sei que posso pedir ajuda.\nProfessor: Nunca esqueca disso."
-            }
-        },
-        // Simas
-        {
-            {
-                "Professor: Encontre uma lembranca feliz.",
-                "Recordar uma noite em que todos riram.",
-                "Simas: Nem lembro da piada, so das risadas.\nProfessor: Isso basta.",
-                "Falar das conversas em casa.",
-                "Simas: Quero voltar a contar historias sem assustar ninguem.\nProfessor: Pense nisso."
-            },
-            {
-                "Professor: Voce conseguiu se concentrar.",
-                "Fazer uma piada discreta.",
-                "Simas: Nenhum caldeirao foi prejudicado.\nProfessor: Um excelente resultado.",
-                "Falar seriamente sobre os amigos.",
-                "Simas: Quero que todos cheguem ao fim desta noite.\nProfessor: E um bom motivo."
-            }
-        },
-        // Cedrico
-        {
-            {
-                "Professor: Pense em quem o acolheu.",
-                "Lembrar o retorno do torneio.",
-                "Cedrico: Alguem me lembrou que eu nao precisava ser um campeao.\nProfessor: Voce continua sendo voce.",
-                "Lembrar os colegas que ficaram.",
-                "Cedrico: Eles nao exigiram que eu fosse perfeito.\nProfessor: Isso e importante."
-            },
-            {
-                "Professor: Ja pode continuar.",
-                "Agradecer por nao ficar sozinho.",
-                "Cedrico: Achei que devia enfrentar tudo sem ajuda.\nProfessor: Nao precisa.",
-                "Pedir que acompanhe os alunos.",
-                "Cedrico: Eles tambem podem precisar dessa orientacao.\nProfessor: Vou procura-los."
-            }
-        }
-    },
-    // Minigame 5
-    {
-        // Luna
-        {
-            {
-                "Gina: A Armada esta cansada.",
-                "Perguntar o que ouviram da camara.",
-                "Luna: As pedras estao contando alguma coisa?\nGina: O selo vibra quando chegamos perto.",
-                "Perguntar pelos colegas.",
-                "Luna: Precisamos que descansem depois disso.\nGina: Assim que a passagem estiver livre."
-            },
-            {
-                "Gina: A camara esta acessivel.",
-                "Pedir que espere pelo sinal da moeda.",
-                "Luna: Assim a gente nao precisa gritar para o castelo inteiro.\nGina: Combinado.",
-                "Deixar uma mensagem de esperanca.",
-                "Luna: Digam que ainda existem coisas bonitas aqui.\nGina: Vou lembrar."
-            }
-        },
-        // Neville
-        {
-            {
-                "Gina: Precisamos de uma ultima ajuda.",
-                "Ouvir o plano da Armada.",
-                "Neville: O que voces ja conseguiram fazer?\nGina: Mantivemos a rota aberta.",
-                "Perguntar se alguem precisa de apoio.",
-                "Neville: Ninguem deve ficar esquecido.\nGina: Os professores estao chegando."
-            },
-            {
-                "Gina: Voce pode entrar.",
-                "Agradecer a todos.",
-                "Neville: Nao esperem que eu vire outra pessoa.\nGina: Queremos apenas voce.",
-                "Combinar onde se reencontrar.",
-                "Neville: Na Sala Precisa, quando terminar.\nGina: Estaremos la."
-            }
-        },
-        // Simas
-        {
-            {
-                "Gina: Voce demorou.",
-                "Explicar a confusao do caminho.",
-                "Simas: Ate o mapa parecia estar de mau humor.\nGina: Guarde essa desculpa para depois.",
-                "Perguntar qual e a prioridade.",
-                "Simas: Desta vez quero saber o plano inteiro.\nGina: Manter a entrada livre."
-            },
-            {
-                "Gina: Tem certeza sobre o selo?",
-                "Confirmar que vai seguir a chave.",
-                "Simas: Ate eu sei quando parar de improvisar.\nGina: Vou acreditar.",
-                "Pedir que conte as boas noticias.",
-                "Simas: Se tudo der certo, quero uma rodada de risadas.\nGina: Combinado."
-            }
-        },
-        // Cedrico
-        {
-            {
-                "Gina: A entrada esta quase livre.",
-                "Perguntar como ajudar.",
-                "Cedrico: Voces conhecem melhor a situacao.\nGina: Precisamos manter a passagem.",
-                "Pedir que organizem o retorno.",
-                "Cedrico: Ninguem fica sozinho aqui.\nGina: Ja dividimos as tarefas."
-            },
-            {
-                "Gina: A camara esta a sua frente.",
-                "Aceitar a confianca.",
-                "Cedrico: Vou fazer minha parte. Sei que farao a de voces.\nGina: Pode seguir.",
-                "Pedir que avisem os professores.",
-                "Cedrico: O que acontecer la dentro deve ser compartilhado.\nGina: Vou enviar a mensagem."
-            }
-        }
-    },
-
-// Minigame 4
     {
         // Luna
         {
@@ -2653,254 +2509,1179 @@ Conversa conversas[11][4][2] = {
         }
     }
 };
- // Simas
-        {
-            {
-                "Hagrid: Parece um fantasma, mas nao e.",
-                "Perguntar se lembrancas costumam dar trabalho.",
-                "Simas: As minhas normalmente so rendem detencao.\nHagrid: Essa aqui e diferente.",
-                "Perguntar por Bicuco.",
-                "Simas: Primeiro o hipogrifo, depois a aula de fantasmas.\nHagrid: Ele esta ali."
-            },
-            {
-                "Hagrid: Bicuco gostou de voce.",
-                "Fazer uma reverencia exageradamente formal.",
-                "Simas: Finalmente, um publico exigente.\nHagrid: Ele merece respeito.",
-                "Pedir que Hagrid conte a Gina.",
-                "Simas: Quero uma testemunha de que ajudei sem quebrar nada.\nHagrid: Vou contar."
-            }
-        },
-        // Cedrico
-        {
-            {
-                "Hagrid: Nao consigo desfazer sozinho o encantamento.",
-                "Combinar como receber Bicuco.",
-                "Cedrico: Assim que estiver livre, ele precisa de voce.\nHagrid: Estarei aqui.",
-                "Perguntar se outros alunos sabem do problema.",
-                "Cedrico: Alguem deve conhecer a rota de volta.\nHagrid: Ja avisei a resistencia."
-            },
-            {
-                "Hagrid: Obrigado por voltar.",
-                "Compartilhar a responsabilidade.",
-                "Cedrico: Voce ficou com ele durante todo esse tempo.\nHagrid: E agora esta seguro.",
-                "Pedir que avise os demais.",
-                "Cedrico: Precisamos saber se outros ecos aparecerem.\nHagrid: Vou mandar uma mensagem."
-            }
-        }
-    },
-    // Missao 4
-    {
-        // Luna
-        {
-            {
-                "Gina: O subsolo esta reagindo aos fragmentos.",
-                "Perguntar se o castelo sente medo.",
-                "Luna: A pedra parece respirar com dificuldade.\nGina: Entao vamos devolver sua tranquilidade.",
-                "Juntar os fragmentos perto da chave.",
-                "Luna: Eles parecem reconhecer uns aos outros.\nGina: A passagem respondeu."
-            },
-            {
-                "Gina: Temos os tres fragmentos.",
-                "Pedir que guarde a lembranca da noite.",
-                "Luna: Um dia os alunos vao querer saber como foi.\nGina: Nao deixaremos isso desaparecer.",
-                "Perguntar pelos estudantes.",
-                "Luna: Precisam de um lugar onde possam rir.\nGina: Os professores estao com eles."
-            }
-        },
-        // Neville
-        {
-            {
-                "Gina: Os menores chegaram ao refugio.",
-                "Confirmar se todos chegaram.",
-                "Neville: Nao quero que reste ninguem nos corredores.\nGina: Conferimos os nomes.",
-                "Contar que ainda sente medo.",
-                "Neville: Nao tenho certeza de que estou pronto.\nGina: Nao precisa ter certeza de tudo."
-            },
-            {
-                "Gina: A entrada esta aberta.",
-                "Agradecer aos colegas.",
-                "Neville: Nenhum fragmento veio parar aqui sozinho.\nGina: Eles vao gostar de ouvir isso.",
-                "Combinar a mensagem de retorno.",
-                "Neville: Se a moeda esfriar, saberemos que acabou.\nGina: Vou esperar o sinal."
-            }
-        },
-        // Simas
-        {
-            {
-                "Gina: Leia as indicacoes da chave.",
-                "Ler tudo antes de agir.",
-                "Simas: Nao ria. Estou seguindo o manual.\nGina: Vou guardar esse momento.",
-                "Perguntar se a passagem tem saida.",
-                "Simas: Prefiro nao passar a noite dentro de uma parede.\nGina: A chave tambem abre o retorno."
-            },
-            {
-                "Gina: O sentinela voltou ao normal.",
-                "Contar que seguiu as instrucoes.",
-                "Simas: Admito, elas eram uteis.\nGina: Isso merece uma comemoração.",
-                "Perguntar se os outros estao seguros.",
-                "Simas: Brincadeiras depois. Como estao todos?\nGina: Estao protegidos."
-            }
-        },
-        // Cedrico
-        {
-            {
-                "Gina: Voce pode confiar na Armada.",
-                "Aceitar que ela coordene a superficie.",
-                "Cedrico: Entao deixo essa parte com voce.\nGina: Finalmente.",
-                "Perguntar o que os colegas precisam.",
-                "Cedrico: Nao quero decidir por eles.\nGina: Precisam que resolvamos a passagem."
-            },
-            {
-                "Gina: O ultimo fragmento esta seguro.",
-                "Compartilhar o merito.",
-                "Cedrico: Essa descoberta tem muitos autores.\nGina: Vou contar a todos.",
-                "Pedir que a Armada preserve a rota.",
-                "Cedrico: Precisamos poder voltar juntos.\nGina: A passagem ficara protegida."
-            }
-        }
-    },
-    // Minigame 4
-    {
-        // Luna
-        {
-            {
-                "Professor: Qual lembranca ajuda a afastar o frio?",
-                "Conversar sobre a mae.",
-                "Luna: Ela me ensinou a procurar beleza no inesperado.\nProfessor: Guarde essa lembranca.",
-                "Recordar as tardes com amigos.",
-                "Luna: Quando conversamos, o mundo fica menos estranho.\nProfessor: Isso pode ajudar."
-            },
-            {
-                "Professor: O frio passou.",
-                "Perguntar se ele tambem sentiu medo.",
-                "Luna: Nao precisa esconder de mim.\nProfessor: Todos sentimos, Luna.",
-                "Agradecer pela companhia.",
-                "Luna: Foi bom nao ouvir apenas o silencio.\nProfessor: Voce nao estava sozinha."
-            }
-        },
-        // Neville
-        {
-            {
-                "Professor: Nao precisa fingir coragem.",
-                "Falar sobre os pais.",
-                "Neville: Quero continuar tentando por eles.\nProfessor: E por voce tambem.",
-                "Lembrar a Sala Precisa.",
-                "Neville: Meus amigos me esperaram mesmo quando duvidei.\nProfessor: Confie nessa lembranca."
-            },
-            {
-                "Professor: A passagem esta livre.",
-                "Admitir o medo.",
-                "Neville: Ainda estou assustado.\nProfessor: E mesmo assim voce continuou.",
-                "Agradecer pela orientacao.",
-                "Neville: Agora sei que posso pedir ajuda.\nProfessor: Nunca esqueca disso."
-            }
-        },
-        // Simas
-        {
-            {
-                "Professor: Encontre uma lembranca feliz.",
-                "Recordar uma noite em que todos riram.",
-                "Simas: Nem lembro da piada, so das risadas.\nProfessor: Isso basta.",
-                "Falar das conversas em casa.",
-                "Simas: Quero voltar a contar historias sem assustar ninguem.\nProfessor: Pense nisso."
-            },
-            {
-                "Professor: Voce conseguiu se concentrar.",
-                "Fazer uma piada discreta.",
-                "Simas: Nenhum caldeirao foi prejudicado.\nProfessor: Um excelente resultado.",
-                "Falar seriamente sobre os amigos.",
-                "Simas: Quero que todos cheguem ao fim desta noite.\nProfessor: E um bom motivo."
-            }
-        },
-        // Cedrico
-        {
-            {
-                "Professor: Pense em quem o acolheu.",
-                "Lembrar o retorno do torneio.",
-                "Cedrico: Alguem me lembrou que eu nao precisava ser um campeao.\nProfessor: Voce continua sendo voce.",
-                "Lembrar os colegas que ficaram.",
-                "Cedrico: Eles nao exigiram que eu fosse perfeito.\nProfessor: Isso e importante."
-            },
-            {
-                "Professor: Ja pode continuar.",
-                "Agradecer por nao ficar sozinho.",
-                "Cedrico: Achei que devia enfrentar tudo sem ajuda.\nProfessor: Nao precisa.",
-                "Pedir que acompanhe os alunos.",
-                "Cedrico: Eles tambem podem precisar dessa orientacao.\nProfessor: Vou procura-los."
-            }
-        }
-    },
-    // Minigame 5
-    {
-        // Luna
-        {
-            {
-                "Gina: A Armada esta cansada.",
-                "Perguntar o que ouviram da camara.",
-                "Luna: As pedras estao contando alguma coisa?\nGina: O selo vibra quando chegamos perto.",
-                "Perguntar pelos colegas.",
-                "Luna: Precisamos que descansem depois disso.\nGina: Assim que a passagem estiver livre."
-            },
-            {
-                "Gina: A camara esta acessivel.",
-                "Pedir que espere pelo sinal da moeda.",
-                "Luna: Assim a gente nao precisa gritar para o castelo inteiro.\nGina: Combinado.",
-                "Deixar uma mensagem de esperanca.",
-                "Luna: Digam que ainda existem coisas bonitas aqui.\nGina: Vou lembrar."
-            }
-        },
-        // Neville
-        {
-            {
-                "Gina: Precisamos de uma ultima ajuda.",
-                "Ouvir o plano da Armada.",
-                "Neville: O que voces ja conseguiram fazer?\nGina: Mantivemos a rota aberta.",
-                "Perguntar se alguem precisa de apoio.",
-                "Neville: Ninguem deve ficar esquecido.\nGina: Os professores estao chegando."
-            },
-            {
-                "Gina: Voce pode entrar.",
-                "Agradecer a todos.",
-                "Neville: Nao esperem que eu vire outra pessoa.\nGina: Queremos apenas voce.",
-                "Combinar onde se reencontrar.",
-                "Neville: Na Sala Precisa, quando terminar.\nGina: Estaremos la."
-            }
-        },
-        // Simas
-        {
-            {
-                "Gina: Voce demorou.",
-                "Explicar a confusao do caminho.",
-                "Simas: Ate o mapa parecia estar de mau humor.\nGina: Guarde essa desculpa para depois.",
-                "Perguntar qual e a prioridade.",
-                "Simas: Desta vez quero saber o plano inteiro.\nGina: Manter a entrada livre."
-            },
-            {
-                "Gina: Tem certeza sobre o selo?",
-                "Confirmar que vai seguir a chave.",
-                "Simas: Ate eu sei quando parar de improvisar.\nGina: Vou acreditar.",
-                "Pedir que conte as boas noticias.",
-                "Simas: Se tudo der certo, quero uma rodada de risadas.\nGina: Combinado."
-            }
-        },
-        // Cedrico
-        {
-            {
-                "Gina: A entrada esta quase livre.",
-                "Perguntar como ajudar.",
-                "Cedrico: Voces conhecem melhor a situacao.\nGina: Precisamos manter a passagem.",
-                "Pedir que organizem o retorno.",
-                "Cedrico: Ninguem fica sozinho aqui.\nGina: Ja dividimos as tarefas."
-            },
-            {
-                "Gina: A camara esta a sua frente.",
-                "Aceitar a confianca.",
-                "Cedrico: Vou fazer minha parte. Sei que farao a de voces.\nGina: Pode seguir.",
-                "Pedir que avisem os professores.",
-                "Cedrico: O que acontecer la dentro deve ser compartilhado.\nGina: Vou enviar a mensagem."
-            }
-        }
-    },
 
+string retornosConversa[11][4][2] = {
+    {
+        {"Gina: Sua moeda respondeu a minha. Vamos usar esse sinal, em vez de gritar pelos corredores.",
+            "Gina: Mandei os alunos por outra passagem. Os retratos nao viram ninguem."},
+        {"Gina: Os alunos ajudaram a entender o pergaminho. Voce fez bem em ouvi-los.",
+            "Gina: Eu fico com a sala. Voce fica com a chave. Combinado?"},
+        {"Gina: Cinco minutos sem acidentes. Vou lembrar disso quando voltarmos.",
+            "Gina: O pergaminho veio mesmo de Dumbledore. Parece que nos deixou um dever de casa."},
+        {"Gina: Cada aluno trouxe uma observacao. Agora o desenho faz sentido.",
+            "Gina: A sala vai permanecer aberta. Obrigada por confiar em mim."}
+    },
+    {
+        {"Estudante: O bruxo nao quis conversar, mas conseguimos recuperar o que era nosso.",
+            "Estudante: Guardei a direcao que a bussola indicava. Podemos mostrar a Gina."},
+        {"Estudante: Conferi os nomes que voce apontou. As caixas estao completas.",
+            "Estudante: Voce ofereceu um acordo. Nao havia mais o que fazer para convence-lo."},
+        {"Estudante: Seu recibo imaginario ganhou um apelido. A caixa do pedagio!",
+            "Estudante: A bussola nao cobra nada. Pelo menos essa parte foi gratuita."},
+        {"Estudante: Voce tentou conversar primeiro. Agora podemos encerrar isso.",
+            "Estudante: Fiz a lista que pediu. Cada caixa voltou para seu dono."}
+    },
+    {
+        {"Aliado: As raizes voltaram a se acomodar. Acho que voce tinha razao sobre o caminho.",
+            "Aliado: Copiei a inscricao. A memoria nao vai desaparecer de novo."},
+        {"Aliado: Deixamos as plantas intactas. Sprout ficaria satisfeita.",
+            "Aliado: Ainda bem que lemos juntos. Eu teria ignorado aquele simbolo."},
+        {"Aliado: A chave funciona. Nao precisamos testar todas as pedras da floresta.",
+            "Aliado: A placa finalmente ficou legivel. Uma pena que so agora."},
+        {"Aliado: A inscricao confere com o fragmento. Foi bom ler juntos.",
+            "Aliado: Marquei a rota de retorno. Os colegas nao precisarao adivinhar o caminho."}
+    },
+    {
+        {"Aliado: As pegadas voltam para as arvores. A criatura encontrou o caminho.",
+            "Aliado: Ela parou de fazer barulho. Parece que a clareira voltou a se acalmar."},
+        {"Aliado: Todos recuaram como voce pediu. Ninguem ficou isolado.",
+            "Aliado: A nevoa esta se dissipando. O caminho habitual voltou a aparecer."},
+        {"Aliado: Seus colegas conseguiram sair sem confusao. Uma novidade e tanto.",
+            "Aliado: O elmo ainda esta ali. Definitivamente, nao e discreto."},
+        {"Aliado: Mantivemos distancia e a criatura conseguiu voltar.",
+            "Aliado: A nevoa veio mesmo da ruina. Vamos avisar os proximos viajantes."}
+    },
+    {
+        {"Duende: Talvez voce tenha razao sobre o valor das lembrancas. Vou pensar nisso.",
+            "Duende: A chave reconheceu o cofre. Agora sabemos por que foi deixada com a Armada."},
+        {"Duende: Vou procurar a origem da fotografia e registrar o que encontrar.",
+            "Duende: A fotografia continua aqui. Voce pode ve-la de novo quando voltar."},
+        {"Duende: Se quiser retornar ao bau, lembre-se das pistas. Nada de improvisar.",
+            "Duende: Todos os objetos continuam inteiros. Estou quase impressionado."},
+        {"Duende: Anotei os nomes dos antigos diretores para voce consultar depois.",
+            "Duende: As mesmas regras valem para qualquer pessoa que voltar ao bau."}
+    },
+    {
+        {"Hagrid: Ele reconheceu sua voz quando voce chegou. Agora esta mais tranquilo.",
+            "Hagrid: As memorias estao se acalmando. Vou avisar se aparecer outra."},
+        {"Hagrid: Ele ja esta caminhando de novo. Era isso que voce queria saber.",
+            "Hagrid: Fiquei por perto, como voce pediu. Ele esta seguro agora."},
+        {"Hagrid: Pois e, nem toda lembranca rende detencao. Algumas precisam de cuidado.",
+            "Hagrid: Voce lembrou do Bicuco antes de fazer perguntas. Ele agradeceria se pudesse."},
+        {"Hagrid: Fiquei pronto para recebe-lo, como combinamos.",
+            "Hagrid: A Armada ja sabe que podemos voltar ao castelo."}
+    },
+    {
+        {"Gina: O castelo ficou mais calmo quando reunimos os fragmentos.",
+            "Gina: Os simbolos agora brilham juntos. Sua ideia funcionou."},
+        {"Gina: Os professores confirmaram todos os nomes. Ninguem ficou para tras.",
+            "Gina: Voce me contou que sentia medo. Obrigada por nao esconder isso."},
+        {"Gina: Guardei as instrucoes. Talvez possamos ate coloca-las em uma aula.",
+            "Gina: A rota de retorno continua aberta. Pode parar de se preocupar com as paredes."},
+        {"Gina: Cuidamos da superficie, como combinamos. Voce fez sua parte.",
+            "Gina: Os colegas chegaram em seguranca. Foi o que nos pediram."}
+    },
+    {
+        {"Professor: A lembranca de sua mae ficou com voce. Nao precisava explica-la ao frio.",
+            "Professor: As tardes com os amigos foram uma boa escolha."},
+        {"Professor: Seus pais sao parte de sua historia, mas o futuro ainda e seu.",
+            "Professor: A Sala Precisa continua esperando por voce."},
+        {"Professor: As risadas eram uma lembranca importante, nao uma distracao.",
+            "Professor: Agora voce ainda podera contar novas historias em casa."},
+        {"Professor: O torneio nao precisa definir todos os seus caminhos.",
+            "Professor: Seus colegas podem continuar dividindo as responsabilidades com voce."}
+    },
+    {
+        {"Gina: O selo agora vibra menos. O castelo ficou silencioso outra vez.",
+            "Gina: Os colegas vao descansar assim que voce puder seguir."},
+        {"Gina: O plano da Armada funcionou porque voce nos ouviu.",
+            "Gina: Os professores ja chegaram. Ninguem precisa ficar aqui sozinho."},
+        {"Gina: Seu mapa ganhou uma marca nova. Agora nao tem desculpa para o atraso.",
+            "Gina: Voce ouviu o plano do inicio ao fim. Estou impressionada."},
+        {"Gina: Obrigada por perguntar antes de decidir por nos.",
+            "Gina: A rota esta pronta. Como voce pediu, ninguem ficou para tras."}
+    },
+    {
+        {"Gina: As lembrancas do castelo ficaram protegidas. Voce tinha razao em defende-las.",
+            "Gina: As pessoas continuam aqui. Nenhum poder poderia substituir isso."},
+        {"Gina: A Armada ouviu seu sinal. Seu esforco nunca foi solitario.",
+            "Gina: Voce escolheu ficar. Nao precisava de permissao para isso."},
+        {"Gina: A escola continua sendo escola, e nao um trono.",
+            "Gina: A chave funcionou. Pela primeira vez, voce nao precisou inventar nada."},
+        {"Gina: Os alunos ainda terao um amanha. Era isso que voce queria proteger.",
+            "Gina: Nao foi uma revanche. Foi uma oportunidade para todos nos."}
+    },
+    {
+        {"Gina: Vou guardar a historia que voce quis ouvir.",
+            "Gina: A fonte voltou a ficar livre de um unico dono."},
+        {"Gina: Compreender uma injustica nao nos obrigou a aceitar outra.",
+            "Gina: Os estudantes continuam seguros. Voce nao se esqueceu deles."},
+        {"Gina: O castelo continua de pe. Alguem precisava considerar as consequencias.",
+            "Gina: A historia de Ranrok merece mais que uma aula apressada."},
+        {"Gina: Podemos aprender com os erros da escola, sem abandonar seus alunos.",
+            "Gina: A fonte continua protegida. Ninguem pagou por uma decisao que nao tomou."}
+    }
+};
 
+// Conversas de chegada: cada personagem encontra uma situacao diferente.
+string conversasChegada[11][4] = {
+    {
+        "Gina: Os retratos da escadaria pararam de conversar.\nLuna: Ate aquele que sempre reclama dos meus sapatos?\nGina: Ate ele. Por isso precisamos entender a mensagem antes que alguem nos veja.",
+        "Gina: Tentei explicar o pergaminho, mas todos comecaram a falar ao mesmo tempo.\nNeville: Eu tambem nao saberia o que dizer.\nGina: Nao precisa ter uma resposta perfeita. Precisamos de uma primeira decisao.",
+        "Gina: Voce trouxe o pergaminho ou mais uma de suas invencoes?\nSimas: Dessa vez, apenas o pergaminho. Acho que isso merece algum reconhecimento.\nGina: Reconhecerei quando sairmos daqui com todos os dedos no lugar.\nSimas: Que exigencia especifica.",
+        "Gina: Os alunos estao esperando que voce diga o que fazer.\nCedrico: Foi assim durante o torneio. Todos esperavam que eu soubesse a resposta.\nGina: Desta vez, temos uma sala cheia de pessoas que podem ajudar.\nCedrico: Entao vamos comecar por elas."
+    },
+    {
+        "Estudante: O menino da primeira caixa chegou a perguntar se ainda teria jantar.\nLuna: Que estranho. Uma caixa que deveria aproximar pessoas acabou separando-as.\nEstudante: O bruxo nao quer nos escutar.",
+        "Estudante: Gina pediu que levasse esses mantimentos ate a Sala Precisa.\nNeville: Voce fez o que podia. Nao precisa pedir desculpas.\nEstudante: Mas ainda precisamos recupera-los.",
+        "Bandido: Tudo que passa por aqui fica sujeito a uma taxa.\nSimas: E quem administra essa taxa? O Ministerio das Passagens Secretas?\nEstudante: Simas, por favor. As pocoes estao naquela caixa.",
+        "Estudante: Posso tentar recuperar as caixas enquanto voce conversa com ele?\nCedrico: Nao quero que voce se coloque em perigo.\nEstudante: Entao me diga como posso ajudar."
+    },
+    {
+        "Aliado: A floresta parece diferente de quando estivemos aqui pela ultima vez.\nLuna: Talvez porque ninguem tenha parado para escuta-la.\nAliado: Ou porque alguem precisa de nos. Veja a chave.",
+        "Aliado: Deveriamos cortar essas raizes?\nNeville: A professora Sprout ficaria muito desapontada se fizessemos isso sem pensar.\nAliado: Certo. Mostre o que aprendeu nas estufas.",
+        "Aliado: O mapa nao mostra essa construcao.\nSimas: Otimo. Um trabalho de campo que nem sequer veio com mapa.\nAliado: A chave esta brilhando, pelo menos.\nSimas: Vamos fingir que isso e uma instrucao.",
+        "Aliado: Nao parece um lugar feito para receber visitantes.\nCedrico: Talvez seja um lugar que precisa ser entendido, nao conquistado.\nAliado: Voce sempre pensa nos desafios como se fossem do torneio?\nCedrico: Estou tentando parar."
+    },
+    {
+        "Aliado: O trasgo nao para de olhar para a nevoa.\nLuna: Nao acho que ele tenha decidido nos esperar. Talvez simplesmente nao saiba voltar.\nAliado: Entao podemos ajuda-lo sem transformar a floresta em uma confusao maior.",
+        "Aliado: A trilha esta cheia de marcas enormes.\nNeville: Elas parecem antigas. O trasgo devia caminhar por aqui antes da nevoa.\nAliado: E agora nos estamos entre ele e o caminho de volta.",
+        "Aliado: Por que esta segurando o riso?\nSimas: Porque quando imaginamos um passeio pela floresta, eu esperava pelo menos encontrar um esquilo.\nAliado: Nao acho que este seja o momento de pedir um esquilo.",
+        "Aliado: O caminho secundario esta logo atras daquela arvore.\nCedrico: E se outros estudantes passarem por aqui depois de nos?\nAliado: Entendo. Nao e apenas nossa passagem que importa."
+    },
+    {
+        "Duende: Alguns bruxos pensam que o valor de um objeto depende de quem o possui.\nLuna: Eu acho que depende de quantas historias ele consegue guardar.\nDuende: Entao talvez este cofre seja mais rico do que parece.",
+        "Duende: Ha documentos que ninguem consulta ha anos.\nNeville: A fotografia dos meus pais estava entre eles?\nDuende: Sim. Pensei que gostaria de saber de onde veio.\nNeville: Obrigado por ter guardado.",
+        "Duende: A ultima pessoa que entrou aqui precisou substituir tres objetos.\nSimas: Vou me esforcar para deixar esse recorde intocado.\nDuende: Nao e uma competicao.\nSimas: Pela primeira vez, concordo completamente.",
+        "Duende: Nem todo objeto precioso esta dentro de um cofre por causa de seu preco.\nCedrico: Alguns estao aqui porque alguem nao queria que fossem encontrados?\nDuende: Exatamente. Por isso precisamos compreender o que vamos levar."
+    },
+    {
+        "Hagrid: Ele nao quis comer desde que aquela coisa apareceu.\nLuna: As lembrancas as vezes fazem isso. Deixam o presente pequeno demais.\nHagrid: So quero que ele consiga sair daqui em paz.",
+        "Hagrid: O eco nao me deixa aproximar da passagem.\nNeville: E voce ficou aqui esperando mesmo assim?\nHagrid: Nao ia deixar o Bicuco sozinho.\nNeville: Entao nao precisa esperar sozinho tambem.",
+        "Hagrid: Nao sei explicar de onde veio aquele sujeito.\nSimas: Se for mais uma aula surpresa, vou registrar uma reclamacao.\nHagrid: Olhe o Bicuco. Ele precisa da nossa ajuda.\nSimas: Certo. Reclamacoes depois.",
+        "Hagrid: Tentei resolver isso sozinho. Nao deu muito certo.\nCedrico: Conheco essa sensacao.\nHagrid: So quero trazer o Bicuco de volta.\nCedrico: Entao essa sera nossa prioridade."
+    },
+    {
+        "Gina: O castelo inteiro parece estar esperando alguma coisa.\nLuna: Talvez esteja cansado de esperar que alguem pergunte o que ele precisa.\nGina: Nos temos a chave e dois fragmentos. Falta apenas um.",
+        "Gina: Lembra da primeira reuniao na Sala Precisa?\nNeville: Lembro. Achei que nao conseguiria nem terminar uma frase.\nGina: Pois olhe para onde voce chegou.\nNeville: Para um subsolo escuro, aparentemente. Mas entendi o que quis dizer.",
+        "Gina: Posso confiar que voce leu todas as indicacoes?\nSimas: Inclusive as letras pequenas. Foi uma experiencia transformadora.\nGina: Entao vamos tentar manter o castelo inteiro.\nSimas: Excelente objetivo.",
+        "Gina: Os alunos menores ja estao acompanhados pelos professores.\nCedrico: Eu deveria verificar pessoalmente.\nGina: Nos ja verificamos. Voce nos deu uma responsabilidade, lembra?\nCedrico: Lembro. Desculpe. Preciso aprender a confiar nisso."
+    },
+    {
+        "Professor: Ninguem precisa contar uma lembranca que prefira guardar.\nLuna: Algumas coisas ficam mais bonitas quando permanecem conosco.\nProfessor: Escolha uma que possa acompanhar voce neste corredor.",
+        "Professor: Antes de avancar, pense em algo que lhe de esperanca.\nNeville: E se eu nao conseguir lembrar direito?\nProfessor: Nao existe uma lembranca perfeita. Experimente uma que seja importante para voce.",
+        "Professor: Voce esta muito calado, Simas.\nSimas: Acho que ate minhas piadas ficaram com frio.\nProfessor: Entao vamos encontrar algo que lhe devolva um pouco de alegria.",
+        "Professor: Nao precisa transformar este momento em outro torneio.\nCedrico: As vezes ainda penso como se estivesse sozinho naquela arena.\nProfessor: Hoje ha pessoas que estao aqui com voce."
+    },
+    {
+        "Gina: Os alunos estao cansados, mas ainda conseguimos manter a passagem.\nLuna: Ate as noites mais compridas precisam acabar em algum momento.\nGina: Espero que esta seja uma delas.",
+        "Gina: Nao sabia se voce conseguiria chegar ate aqui.\nNeville: Houve momentos em que eu tambem nao sabia.\nGina: Agora estamos juntos outra vez.\nNeville: Entao vamos decidir o que falta.",
+        "Gina: Juro que, quando tudo isso acabar, quero uma semana sem aventuras.\nSimas: Uma semana? Posso negociar duas?\nGina: Comece terminando esta.\nSimas: Justo.",
+        "Gina: Os colegas ja organizaram a passagem para a camara.\nCedrico: Parece que fizeram boa parte do trabalho sem mim.\nGina: Era essa a ideia.\nCedrico: E uma boa ideia."
+    },
+    {
+        "Voldemort: Os diretores deste castelo jamais compreenderam o que guardavam.\nLuna: Talvez compreendessem mais do que voce imagina.\nVoldemort: O poder e a unica coisa que permanecera.\nLuna: Que pensamento triste.",
+        "Voldemort: Seus amigos nao estao aqui para responder por voce.\nNeville: Eles nao precisam fazer isso.\nVoldemort: Entao por que veio?\nNeville: Porque ainda ha alguma coisa que precisamos proteger.",
+        "Voldemort: Veja do que esta fonte e capaz.\nSimas: Estou vendo. E pensando na quantidade de trabalho que os professores terao se voce nao sair daqui.\nVoldemort: Ainda insiste em fazer graca.\nSimas: Nem sempre e graca.",
+        "Voldemort: O torneio deveria ter ensinado seus limites.\nCedrico: Ensinou que nao quero transformar a vida dos outros em uma competicao.\nVoldemort: Voce poderia ter aprendido algo mais util.\nCedrico: Para voce, talvez."
+    },
+    {
+        "Ranrok: A magia que guardaram aqui poderia ter pertencido aos meus.\nLuna: Quem a guarda nao deveria ser seu unico dono.\nRanrok: E por que os seus sempre decidiram o contrario?\nLuna: Nao sei. Gostaria de compreender.",
+        "Ranrok: A escola que voce defende nunca ouviu nossa historia.\nNeville: Entao temos algo a aprender.\nRanrok: Aprender nao devolve o que nos tiraram.\nNeville: Mas pode mudar o que fazemos a partir de agora.",
+        "Ranrok: Voce acha que uma piada resolve seculos de silencio?\nSimas: Nao. Algumas coisas sao grandes demais para isso.\nRanrok: Entao me diga o que pretende fazer.\nSimas: Encontrar uma solucao que nao apague mais nenhuma historia.",
+        "Ranrok: Os seus sempre falaram sobre proteger a magia.\nCedrico: Proteger nao deveria significar impedir que outros tenham acesso.\nRanrok: Palavras bonitas, vindas de quem ja tem tudo.\nCedrico: Por isso precisamos ouvir, mesmo quando e desconfortavel."
+    }
+};
 
+// Conserva as escolhas de cada etapa para o reencontro e o historico.
+// Guarda as duas respostas de cada cena para recuperar suas consequencias.
+int escolhasNarrativas[11][2] = {};
+
+// Mostra uma conversa e guarda a alternativa escolhida.
+void conversar(jogador &p, int cena, int momento) {
+    Conversa &c = conversas[cena][indicePersonagem(p)][momento];
+    novaTela();
+    cout << "====================================" << endl;
+    cout << "          CONVERSA                  " << endl;
+    cout << "====================================" << endl;
+    if (momento == 0) {
+        cout << conversasChegada[cena][indicePersonagem(p)] << endl << endl;
+    }
+    if (momento == 1 && escolhasNarrativas[cena][0] != 0) {
+        cout << retornosConversa[cena][indicePersonagem(p)][escolhasNarrativas[cena][0] - 1] << endl << endl;
+    }
+    cout << c.pergunta << endl << endl;
+    cout << "1 - " << c.opcao1 << endl;
+    cout << "2 - " << c.opcao2 << endl;
+    cout << "Escolha narrativa: ";
+    int escolha = lerOpcao(1, 2);
+    escolhasNarrativas[cena][momento] = escolha;
+    string assunto;
+    if (escolha == 1) {
+        assunto = c.opcao1;
+        cout << endl << c.resposta1 << endl;
+    } else {
+        assunto = c.opcao2;
+        cout << endl << c.resposta2 << endl;
+    }
+    empilharAcao(p.nomeP + ": " + assunto);
+    atrasoNarrativo();
+}
+
+// Reage a derrota sem antecipar uma vitoria.
+void narrarDerrota(jogador &p, int cena) {
+    string falas[4] = {"Ainda queria ouvir o que o castelo tinha a dizer.",
+        "Queria ter conseguido voltar para os meus amigos.",
+        "Desta vez nao consegui terminar o plano.",
+        "Espero que os outros consigam continuar."};
+    novaTela();
+    cout << p.nomeP << ": " << falas[indicePersonagem(p)] << endl;
+    empilharAcao("Desafio nao concluido: " + to_string(cena + 1));
+}
+
+// Exibe a abertura exclusiva da etapa.
+void abrirCena(jogador &p, int cena) {
+    cout << "\n====================================" << endl;
+    cout << titulos[cena] << endl;
+    cout << "====================================" << endl;
+    mostrarNarrativa(contextos[cena]);
+    mostrarNarrativa(cenas[cena][indicePersonagem(p)].abertura);
+    mostrarDialogo(p, cena, 0);
+    conversar(p, cena, 0);
+}
+
+// Mostra pensamentos conforme a escolha real do bau.
+void narrarBau(jogador &p, bool tentou) {
+    string conseguiu[4] = {"As runas estavam apenas esperando ser ouvidas.",
+        "Conseguimos. Mais uma coisa para proteger.",
+        "Viu? Nem precisamos explodir o bau!",
+        "A espada pertence a todos que precisam dela."};
+    string pendente[4] = {"Talvez os numeros ainda tenham algo a dizer.",
+        "Posso tentar de novo depois. O fragmento vem primeiro.",
+        "Esse bau e teimoso. Voltarei com mais paciencia.",
+        "Nao vou atrasar o grupo por uma recompensa."};
+    string recusou[4] = {"Deixarei as runas conversarem sozinhas por enquanto.",
+        "O fragmento e mais importante agora.",
+        "Vamos deixar o bau quieto. Por enquanto.",
+        "O cofre pode esperar. Nossos amigos, nao."};
+    int id = indicePersonagem(p);
+    cout << p.nomeP << ": " << (campanha.espada ? conseguiu[id] : tentou ? pendente[id] : recusou[id]) << endl;
+}
+
+// Exibe uma reacao individual ao optar pela rota alternativa.
+void narrarRecusa(jogador &p, int id) {
+    string falas[5][4] = {
+        {"A bussola ainda procura seu caminho. Voltaremos se pudermos.",
+            "Vou avisar Gina sobre os mantimentos. Precisamos voltar.",
+            "Hoje nao temos tempo para discutir taxas. Mas volto por essa caixa.",
+            "Vou contar a Armada onde ficaram os suprimentos."},
+        {"Vamos deixar que ele encontre seu caminho entre as arvores.",
+            "Marcarei a trilha secundaria para ninguem se perder.",
+            "Finalmente uma placa indicando uma saida util.",
+            "Avisem os companheiros para nao assustar a criatura."},
+        {"Hagrid, nao esqueca de conversar com ele. Vou tentar voltar.",
+            "Hagrid, avise a resistencia. Precisamos de mais ajuda aqui.",
+            "Hagrid, nao deixe essa lembranca estragar sua noite. Voltaremos.",
+            "Hagrid, confio em voce e na Armada. Vou manter a rota de volta."},
+        {"Talvez um caminho menos frio nos espere.",
+            "Os professores conhecem uma rota protegida. Vou seguir com eles.",
+            "Uma rota sem frio? A melhor proposta da noite.",
+            "Vamos deixar a passagem para quem conhece o Patrono."},
+        {"Gina, cuidado com os colegas. Ainda podemos voltar.",
+            "Gina, confio na Armada. Vou lembrar deste caminho.",
+            "Vocês mantem a porta e eu cuido dos fragmentos. Combinado?",
+            "Gina, nao vou pedir que facam tudo sozinhos. Vou voltar se for preciso."}
+    };
+    cout << p.nomeP << ": " << falas[id - 1][indicePersonagem(p)] << endl;
+}
+
+// Exibe desfecho da etapa vitoriosa.
+void fecharCena(jogador &p, int cena) {
+    novaTela();
+    cout << "====================================" << endl;
+    cout << "         DESFECHO DA CENA           " << endl;
+    cout << "====================================" << endl;
+    mostrarNarrativa(cenas[cena][indicePersonagem(p)].encerramento);
+    mostrarDialogo(p, cena, 2);
+    conversar(p, cena, 1);
+    mostrarNarrativa(transicoes[cena]);
+}
+
+// Atualiza as pistas obrigatorias.
+void receberFragmento(jogador &p, int id) {
+    if (id == 1) {
+        campanha.chaveAcesso = true;
+    }
+    else {
+        campanha.fragmentos[id - 2] = true;
+    }
+    string premios[4] = {"Chave de acesso",
+        "Fragmento da Memória",
+        "Fragmento do Poder",
+        "Fragmento da Proteção"};
+    cout << "Voce recebeu: " << premios[id - 1] << endl;
+    if (id == 2) {
+        cout << "Dumbledore: Existem poderes que não deveriam pertencer a um único bruxo. Hogwarts sempre foi um deles." << endl;
+    }
+    if (id == 3) {
+        campanha.recompensaMissao3 = true;
+    }
+    empilharAcao(p.nomeP + " recebeu " + premios[id - 1]);
+}
+
+// Dados fixos das quatro missoes, na ordem da campanha.
+const string adversariosMissoes[4] = {"Seguidores dos Carrow",
+    "Guardiao de pedra",
+    "Armadura encantada",
+    "Sentinela corrompido"};
+const int vidasMissoes[4] = {55, 90, 130, 160};
+const int xpMissoes[4] = {120, 200, 250, 500};
+
+// Enfrenta uma missao do roteiro.
+bool missaoNarrativa(jogador &p, int id) {
+    int indices[4] = {0, 2, 4, 6};
+    int cena = indices[id - 1];
+    if (id == 1 && campanha.posicao == locais[cena]) {
+        novaTela();
+    } else {
+        deslocar(p, locais[cena]);
+    }
+    abrirCena(p, cena);
+    novaTela();
+    if (id == 3) {
+        explorarBau(p);
+        narrarBau(p, campanha.tentouBau);
+        prepararProximaEtapa(p);
+    }
+    if (!combate(p, {adversariosMissoes[id - 1], vidasMissoes[id - 1], 11 + id, 60}, cena)) {
+        narrarDerrota(p, cena);
+        return false;
+    }
+    fecharCena(p, cena);
+    receberFragmento(p, id);
+    concluirMissao(p, id, xpMissoes[id - 1]);
+    return true;
+}
+
+// Primeira missao pela perspectiva de Luna.
+bool missaoUmPum(jogador &p) {
+    return missaoNarrativa(p, 1);
+}
+
+// Primeira missao pela perspectiva de Neville.
+bool missaoUmPdois(jogador &p) {
+    return missaoNarrativa(p, 1);
+}
+
+// Primeira missao pela perspectiva de Simas.
+bool missaoUmPtres(jogador &p) {
+    return missaoNarrativa(p, 1);
+}
+
+// Primeira missao pela perspectiva de Cedrico.
+bool missaoUmPquatro(jogador &p) {
+    return missaoNarrativa(p, 1);
+}
+
+// Encaminha a primeira missao para o personagem.
+bool executarMissao(jogador &p, int id) {
+    if (id != 1) {
+        return missaoNarrativa(p, id);
+    }
+    switch (indicePersonagem(p)) {
+        case 0:
+            return missaoUmPum(p);
+        case 1:
+            return missaoUmPdois(p);
+        case 2:
+            return missaoUmPtres(p);
+        case 3:
+            return missaoUmPquatro(p);
+    }
+    return false;
+}
+
+// Mostra a lembranca selecionada no desafio.
+void narrarLembranca(jogador &p, int escolha) {
+    string familia[4] = {"Minha mae. Uma lembranca que o frio nao pode levar.",
+        "Meus pais. Quero que saibam que continuo tentando.",
+        "Pensei em casa, nas conversas que ainda quero ter.",
+        "Lembrei do acolhimento depois do torneio."};
+    string amigos[4] = {"As tardes com meus amigos. O mundo parecia gentil.",
+        "A Sala Precisa. Meus amigos estavam me esperando.",
+        "A ultima vez que todos rimos juntos.",
+        "Pensei em quem me ajudou a recomecar."};
+    int id = indicePersonagem(p);
+    cout << p.nomeP << ": " << (escolha == 1 ? familia[id] : amigos[id]) << endl;
+}
+
+// Usa a lembranca selecionada anteriormente.
+void prepararLembranca(jogador &p) {
+    int escolha = escolhasNarrativas[7][0];
+    if (escolha == 0) {
+        escolha = 2;
+    }
+    else if (indicePersonagem(p) == 2) {
+        escolha = 3 - escolha;
+    }
+    cout << "A lembranca escolhida na conversa sustenta sua magia." << endl;
+    narrarLembranca(p, escolha);
+}
+
+// Aplica a defesa ou concentracao no minigame.
+void aplicarDefesaDementador(jogador &p, int acao, int &protecao) {
+    if (acao == 1) {
+        protecao -= 60;
+        p.hp = max(0, p.hp - 5);
+        reacaoCombate(p, 2);
+    }
+    else {
+        protecao -= 90;
+        p.hp = max(0, p.hp - 10);
+        reacaoCombate(p, 3);
+    }
+}
+
+// Exibe o cabecalho original do minigame.
+// Desafio defensivo: o professor auxilia com o Patrono.
+bool desafioDementador(jogador &p) {
+    int protecao = 180;
+    bool falou = false;
+    prepararLembranca(p);
+    while (protecao > 0 && p.hp > 0) {
+        cout << "Frio restante: " << protecao << " | Vida: " << p.hp << endl;
+        cout << "1 - Protego  2 - Concentrar lembranca  3 - Usar item" << endl;
+        cout << "Escolha defensiva: ";
+        int acao = lerOpcao(1, 3);
+        limparTela();
+        if (acao == 3) {
+            consumirItem(p);
+            continue;
+        }
+        if (!falou) {
+            mostrarDialogo(p, 7, 1);
+            falou = true;
+        }
+        aplicarDefesaDementador(p, acao, protecao);
+    }
+    if (p.hp > 0) {
+        cout << "Professor: Expecto Patronum! A passagem esta livre." << endl;
+    }
+    return p.hp > 0;
+}
+
+// Liberta Bicuco apos vencer o eco.
+void libertarBicuco(jogador &p) {
+    novaTela();
+    cout << "BICUCO - O encantamento perdeu a forca." << endl;
+    cout << "1 - Fazer uma reverencia e abrir a passagem" << endl;
+    cout << "2 - Chamar Hagrid para ajudar" << endl;
+    cout << "Escolha do resgate: ";
+    int escolha = lerOpcao(1, 2);
+    string sozinho[4] = {"Retribui a reverencia. Ele pareceu entender.",
+        "Fiz uma reverencia. Devagar, Bicuco se aproximou.",
+        "Acho que ele gostou mais de mim do que do Pettigrew.",
+        "Mantive a calma ate que ele pudesse caminhar livremente."};
+    string ajuda[4] = {"Hagrid, acho que ele gostaria de ouvir sua voz.",
+        "Hagrid, pode me ajudar? Nao preciso fazer isso sozinho.",
+        "Hagrid! Acho que temos um passageiro esperando por voce.",
+        "Hagrid, vamos leva-lo de volta juntos."};
+    int id = indicePersonagem(p);
+    cout << p.nomeP << ": " << (escolha == 1 ? sozinho[id] : ajuda[id]) << endl;
+    cout << "Bicuco esta livre e retorna a cabana." << endl;
+    empilharAcao(escolha == 1 ? "Libertou Bicuco com uma reverencia" : "Libertou Bicuco com Hagrid");
+}
+
+// Entrega a recompensa especifica do evento.
+void premiarMinigame(jogador &p, int id) {
+    if (id == 1) {
+        campanha.pocoesCura++;
+        cout << "Suprimentos recuperados: uma pocao e a bussola." << endl;
+    }
+    if (id == 2 && p.level > 3) {
+        if (indicePersonagem(p) == 2) {
+            cout << "Simas: Finalmente uma recompensa que combina com meus cabelos." << endl;
+        }
+        guardarArmadura(p, 2, p.level);
+    }
+    if (id == 4) {
+        guardarArmadura(p, 1, p.level);
+    }
+    if (id == 5) {
+        guardarArmadura(p, 3, p.level);
+    }
+}
+
+// Executa evento e concede recompensas apenas na vitoria.
+bool jogarMinigame(jogador &p, int id, inimigo rival, int xp) {
+    int indices[5] = {1, 3, 5, 7, 8};
+    bool venceu;
+    if (id == 4) {
+        venceu = desafioDementador(p);
+    } else {
+        venceu = combate(p, rival, indices[id - 1]);
+    }
+    if (!venceu) {
+        narrarDerrota(p, indices[id - 1]);
+        return false;
+    }
+    if (id == 3) {
+        libertarBicuco(p);
+    }
+    fecharCena(p, indices[id - 1]);
+    adicionar_xp(p, xp);
+    premiarMinigame(p, id);
+    p.hp = min(p.hp, vidaMaxima());
+    return true;
+}
+
+// Minigame do Bandido.
+bool minigame_bandido(jogador &p) {
+    inimigo bandido = {"Bandido", 85, 10, 70};
+    return jogarMinigame(p, 1, bandido, 30);
+}
+
+// Minigame do Trasgo.
+bool minigame_trasgo(jogador &p) {
+    inimigo trasgo = {"Trasgo", 130, 10, 70};
+    return jogarMinigame(p, 2, trasgo, 50);
+}
+
+// Minigame de Pedro Pettigrew.
+bool minigame_pedro(jogador &p) {
+    inimigo pedro = {"Eco de Pettigrew", 140, 10, 70};
+    return jogarMinigame(p, 3, pedro, 70);
+}
+
+// Minigame do Dementador.
+bool minigame_dementador(jogador &p) {
+    inimigo dementador = {"Dementador", 180, 15, 65};
+    return jogarMinigame(p, 4, dementador, 100);
+}
+
+// Minigame dos Comensais.
+bool minigame_comensais(jogador &p) {
+    inimigo comensais = {"Comensais", 200, 17, 65};
+    return jogarMinigame(p, 5, comensais, 120);
+}
+
+// Seleciona o minigame.
+bool desafioMinigame(jogador &p, int id) {
+    switch (id) {
+        case 1:
+            return minigame_bandido(p);
+        case 2:
+            return minigame_trasgo(p);
+        case 3:
+            return minigame_pedro(p);
+        case 4:
+            return minigame_dementador(p);
+        case 5:
+            return minigame_comensais(p);
+    }
+    return false;
+}
+
+// Sustenta tres barreiras antes de acessar os fragmentos.
+bool faseDefesaFinal(jogador &p) {
+    cout << "FASE 1 - Resistir com magia defensiva" << endl;
+    for (int i = 0; i < 3 && p.hp > 0;) {
+        cout << "Barreiras: " << i << "/3 | 1 - Protego 2 - Usar item" << endl;
+        cout << "Escolha da barreira: ";
+        int acao = lerOpcao(1, 2);
+        if (acao == 2) {
+            consumirItem(p);
+        }
+        else {
+            p.hp = max(0, p.hp - 6);
+            i++;
+            reacaoCombate(p, 2);
+        }
+    }
+    return p.hp > 0;
+}
+
+// Usa os fragmentos na ordem descoberta.
+bool faseFragmentos(jogador &p, bool ranrok) {
+    cout << (ranrok ? "FASE 2 - Neutralizar cristais" : "FASE 2 - Ativar os fragmentos") << endl;
+    string nomes[3] = {"Memoria",
+        "Poder",
+        "Protecao"};
+    for (int i = 0; i < 3 && p.hp > 0;) {
+        cout << "Fragmento necessario: " << nomes[i] << endl;
+        cout << "1-Memoria 2-Poder 3-Protecao 4-Usar item" << endl;
+        cout << "Escolha do fragmento: ";
+        int acao = lerOpcao(1, 4);
+        if (acao == 4) {
+            consumirItem(p);
+        }
+        else if (acao == i + 1 && campanha.fragmentos[i]) {
+            cout << "Fragmento ativado!" << endl;
+            i++;
+        } else {
+            cout << "A magia nao reagiu. Tente novamente." << endl;
+            p.hp = max(0, p.hp - 5);
+        }
+    }
+    return p.hp > 0;
+}
+
+// Duelo final compartilhado.
+bool fasesChefe(jogador &p, int id, inimigo chefe) {
+    if (id == 6) {
+        if (!faseDefesaFinal(p)) {
+            return false;
+        }
+        novaTela();
+        mostrarDialogo(p, 9, 1);
+        if (!faseFragmentos(p, false)) {
+            return false;
+        }
+        novaTela();
+        cout << "FASE 3 - Romper a ligacao de Voldemort com a fonte" << endl;
+    } else {
+        cout << "FASE 1 - Guardioes da magia antiga" << endl;
+        if (!combate(p, {"Guardioes magicos", 100, 10, 60})) {
+            return false;
+        }
+        novaTela();
+        mostrarDialogo(p, 10, 1);
+        if (!faseFragmentos(p, true)) {
+            return false;
+        }
+        novaTela();
+        cout << "FASE 3 - Restaurar o selo" << endl;
+    }
+    return combate(p, chefe);
+}
+
+// Retoma a primeira escolha da campanha no epilogo.
+void recordarInicio(jogador &p) {
+    int id = indicePersonagem(p);
+    int escolha = escolhasNarrativas[0][0];
+    if (!escolha) {
+        return;
+    }
+    string primeira[4] = {"A moeda ainda esta quente. Desta vez, acho que e uma boa noticia.",
+        "Ainda quero ouvir os alunos. Eles tem muito a dizer.",
+        "Cinco minutos de responsabilidade viraram uma noite inteira.",
+        "Dividir as tarefas fez toda a diferenca."};
+    string segunda[4] = {"Os retratos voltaram a conversar. Ate os desagradaveis.",
+        "Obrigado, Gina, por comecar comigo.",
+        "Dumbledore poderia ter deixado instrucoes mais claras.",
+        "Gina, voce conduziu o grupo muito melhor do que imagina."};
+    cout << "Gina: Lembra da nossa primeira conversa?" << endl;
+    cout << p.nomeP << ": " << (escolha == 1 ? primeira[id] : segunda[id]) << endl;
+    cout << "Gina: Vamos guardar esta noite. Mas agora precisamos descansar." << endl;
+}
+
+// Desafio final exclusivo da historia selecionada.
+bool jogarChefe(jogador &p, int id, inimigo chefe) {
+    int cena = 10;
+    if (id == 6) {
+        cena = 9;
+    }
+    abrirCena(p, cena);
+    novaTela();
+    if (!fasesChefe(p, id, chefe)) {
+        narrarDerrota(p, cena);
+        return false;
+    }
+    campanha.selo = true;
+    fecharCena(p, cena);
+    adicionar_xp(p, 1000);
+    verificarFimPolissuco(p);
+    sincronizarListaFeiticos();
+    novaTela();
+    cout << "EPILOGO - " << p.nomeP << endl;
+    mostrarDialogo(p, 11, 0);
+    mostrarNarrativa(epilogos[indicePersonagem(p)]);
+    mostrarDialogo(p, 11, 1);
+    novaTela();
+    mostrarDialogo(p, 11, 2);
+    mostrarNarrativa(cenaComum);
+    recordarInicio(p);
+    return true;
+}
+
+// Batalha contra Voldemort.
+bool batalha_voldemort(jogador &p) {
+    inimigo voldemort = {"Voldemort", 250, 20, 100};
+    return jogarChefe(p, 6, voldemort);
+}
+
+// Batalha contra Ranrok.
+bool batalha_ranrok(jogador &p) {
+    inimigo ranrok = {"Ranrok", 300, 15, 100};
+    return jogarChefe(p, 7, ranrok);
+}
+
+// Seleciona um desafio.
+bool desafioNarrativo(jogador &p, int id) {
+    if (id >= 1 && id <= 5) {
+        return desafioMinigame(p, id);
+    }
+    if (id == 6) {
+        return batalha_voldemort(p);
+    }
+    if (id == 7) {
+        return batalha_ranrok(p);
+    }
+    return false;
+}
+
+// Libera a recompensa da terceira missao quando o nivel exigido e atingido.
+void recompensaPendente(jogador &p) {
+    if (!campanha.recompensaMissao3 || p.level < 6 || p.hp <= 0) {
+        return;
+    }
+    cout << "O artefato de Dumbledore esta disponivel em Gringotes. Retorne pelo mapa." << endl;
+}
+
+// Executar evento.
+bool executarEvento(jogador& p, int id) {
+    if (campanha.eventosVencidos[id - 1]) {
+        return true;
+    }
+    bool venceu = desafioNarrativo(p, id);
+    if (venceu) {
+        campanha.eventosVencidos[id - 1] = true;
+        ++campanha.eventosConcluidos;
+        verificarFimPolissuco(p);
+        sincronizarListaFeiticos();
+        empilharAcao("Concluiu evento " + to_string(id));
+        cout << "Concluiu evento " << id << endl;
+    }
+    return venceu;
+}
+
+// Prepara um evento sem avancar ao consultar o inventario.
+bool prepararEvento(jogador& p) {
+    while (p.hp > 0) {
+        cout << "\n====================================" << endl;
+        cout << "        UM DESAFIO APARECEU!        " << endl;
+        cout << "====================================" << endl;
+        cout << "1 - Enfrentar" << endl;
+        cout << "2 - Ver inventario / usar item" << endl;
+        cout << "3 - Evitar desafio" << endl;
+        cout << "Escolha: ";
+        int escolha = lerOpcao(1, 3);
+        if (escolha == 1) {
+            return true;
+        }
+        if (escolha == 3) {
+            return false;
+        }
+        consumirItem(p);
+    }
+    return false;
+}
+
+// Visita ou revisita uma oportunidade do mapa.
+void visitarEvento(jogador &p, int id) {
+    if (campanha.eventosVencidos[id - 1] || p.hp <= 0) {
+        return;
+    }
+    int indices[5] = {1, 3, 5, 7, 8};
+    int cena = indices[id - 1];
+    campanha.eventosVistos[id - 1] = true;
+    deslocar(p, locais[cena]);
+    cout << "Evento " << id << " de 5:" << endl;
+    abrirCena(p, cena);
+    if (prepararEvento(p)) {
+        novaTela();
+        executarEvento(p, id);
+    }
+    else if (p.hp > 0) {
+        string rotas[5] = {"Gina fornece a rota sem a bussola.",
+            "A trilha secundaria permite seguir.",
+            "Hagrid pede apoio a resistencia e prepara o resgate.",
+            "Os professores protegem uma rota alternativa.",
+            "A Armada mantem a rota aberta."};
+        cout << rotas[id - 1] << endl;
+        narrarRecusa(p, id);
+        empilharAcao("Evitou evento " + to_string(id));
+        cout << "Evitou evento " << id << endl;
+    }
+    mostrarResumo(p);
+    if (p.hp > 0) {
+        prepararProximaEtapa(p);
+    }
+}
+
+// Processar eventos.
+void processarEventos(jogador& p, int quantidade = 1) {
+    int id;
+    while (p.hp > 0 && quantidade-- > 0 && desenfileirarEvento(id)) {
+        visitarEvento(p, id);
+    }
+}
+
+// Contar feiticos desbloqueados.
+int contarFeiticosDesbloqueados() {
+    int total = 0;
+    for (int i = 0; i < 10; i++) {
+        if (inventario_feitico[i].desbloqueado) {
+            total++;
+        }
+    }
+    return total;
+}
+
+// Pode enfrentar chefe.
+bool podeEnfrentarChefe() {
+    return campanha.chaveAcesso && campanha.fragmentos[0] && campanha.fragmentos[1] && campanha.fragmentos[2]
+        && campanha.missaoConcluida == 4 && campanha.eventosConcluidos >= 3
+        && contarFeiticosDesbloqueados() >= 7;
+}
+
+// Preparar inicio.
+void prepararInicio(jogador& p) {
+    campanha.posicao = "Hogwarts";
+    // A armadura inicial ocupa o primeiro slot e vem equipada.
+    Ainventario[0] = armadura_jogo[0];
+    slot_ocupado[0] = true;
+    armadura_equipada = -1;
+    bonusArmadura = 0;
+    p.hp = 100;
+    raizBaus = inserirBau(raizBaus, 50, "Pocao");
+    raizBaus = inserirBau(raizBaus, 25, "Pocao");
+    raizBaus = inserirBau(raizBaus, 75, "Pocao");
+    raizBaus = inserirBau(raizBaus, 10, "Pocao");
+    raizBaus = inserirBau(raizBaus, 40, "Pocao");
+    campanha.chaveEspada = 61 + rand() % 7;
+    raizBaus = inserirBau(raizBaus, campanha.chaveEspada, "Espada da Grifinoria");
+    sincronizarListaFeiticos();
+}
+// Pausa opcional entre combates: itens podem ser usados varias vezes.
+// Preparar proxima etapa.
+void prepararProximaEtapa(jogador& p) {
+    while (p.hp > 0 ) {
+        novaTela();
+        mostrarResumo(p);
+        mostrarSuprimentos();
+        cout << "\n====================================" << endl;
+        cout << "             PREPARACAO             " << endl;
+        cout << "====================================" << endl;
+        cout << "1 - Continuar" << endl;
+        cout << "2 - Usar item" << endl;
+        cout << "3 - Descansar" << endl;
+        cout << "4 - Equipar armadura" << endl;
+        cout << "Escolha: ";
+        int opcao = lerOpcao(1, 4);
+        if (opcao == 1) {
+            return;
+        }
+        limparTela();
+        if (opcao == 2) {
+            consumirItem(p);
+        }
+        if (opcao == 3) {
+            alimentar(p);
+        }
+        if (opcao == 4) {
+            equipar_armadura(p);
+        }
+    }
+}
+
+// Retorna a Gringotes quando o local ja foi visitado.
+void retornarBau(jogador &p) {
+    if (campanha.missaoConcluida < 3) {
+        cout << "Gringotes ainda nao foi visitado." << endl;
+        return;
+    }
+    string anterior = campanha.posicao;
+    deslocar(p, "Gringotes");
+    if (campanha.recompensaMissao3 && p.level >= 6) {
+        campanha.recompensaMissao3 = false;
+        guardarArmadura(p, 4, p.level);
+    }
+    if (p.hp > 0) {
+        explorarBau(p);
+    }
+    if (p.hp > 0) {
+        deslocar(p, anterior);
+    }
+}
+
+// Permite retornar a desafios ja encontrados.
+void retornarMapa(jogador &p) {
+    mostrarMapaAtual();
+    for (int i = 0; i < 5; i++) {
+        if (campanha.eventosVistos[i] && !campanha.eventosVencidos[i]) {
+            cout << i + 1 << " - Revisitar " << titulos[(i < 4) ? i * 2 + 1 : 8] << endl;
+        }
+    }
+    cout << "6 - Retornar ao bau de Gringotes | 0 - Voltar" << endl;
+    cout << "Destino: ";
+    int id = lerOpcao(0, 6);
+    string anterior = campanha.posicao;
+    if (id == 6) {
+        retornarBau(p);
+    }
+    else if (id && campanha.eventosVistos[id - 1] && !campanha.eventosVencidos[id - 1]) {
+        visitarEvento(p, id);
+    }
+    else if (id) {
+        cout << "Desafio indisponivel." << endl;
+    }
+    if (p.hp > 0 && campanha.posicao != anterior) {
+        deslocar(p, anterior);
+    }
+}
+
+// Exibe opcoes entre etapas.
+int menuEntreMissoes() {
+    cout << "\n====================================" << endl;
+    cout << "           ENTRE MISSOES            " << endl;
+    cout << "====================================" << endl;
+    cout << "1 - Continuar" << endl;
+    cout << "2 - Usar item" << endl;
+    cout << "3 - Explorar bau" << endl;
+    cout << "4 - Historico" << endl;
+    cout << "5 - Ordenacao e buscas" << endl;
+    cout << "6 - Lista de feiticos" << endl;
+    cout << "7 - Equipar armadura" << endl;
+    cout << "8 - Retornar pelo mapa" << endl;
+    cout << "9 - Inventario completo" << endl;
+    cout << "Escolha: ";
+    return lerOpcao(1, 9);
+}
+
+// Executa uma consulta entre missoes.
+void executarOpcaoEntreMissoes(jogador &p, int opcao) {
+    switch (opcao) {
+        case 2:
+            consumirItem(p);
+            break;
+        case 3:
+            retornarBau(p);
+            break;
+        case 4:
+            mostrarHistorico();
+            break;
+        case 5:
+            demonstrarOrdenacaoBusca();
+            break;
+        case 6:
+            percorrerListaFeiticos();
+            break;
+        case 7:
+            equipar_armadura(p);
+            break;
+        case 8:
+            retornarMapa(p);
+            break;
+        case 9:
+            mostrarInventarioCompleto();
+            break;
+    }
+}
+
+// Entre missoes.
+void entreMissoes(jogador& p) {
+    while (p.hp > 0) {
+        novaTela();
+        mostrarResumo(p);
+        mostrarSuprimentos();
+        int opcao = menuEntreMissoes();
+        if (opcao != 1) {
+            limparTela();
+        }
+        if (opcao == 1) {
+            campanha.alimentacao = max(0, campanha.alimentacao - 10);
+            return;
+        }
+        executarOpcaoEntreMissoes(p, opcao);
+    }
+
+}
+
+// Liberar memoria.
+void liberarMemoria() {
+    liberarListaFeiticos();
+    liberarPilha();
+    liberarFila();
+    liberarBaus(raizBaus);
+    raizBaus = nullptr;
+}
+
+// Enfileira os cinco eventos nas posicoes narrativas, sem repeticao.
+void prepararFilaEventos() {
+    for (int i = 1; i <= 5; i++) {
+        enfileirarEvento(i);
+    }
+}
+
+// Coordena missoes e eventos na ordem da campanha.
+void executarCampanha(jogador& p) {
+    prepararFilaEventos();
+    for (int id = 1; id <= 4 && p.hp > 0; id++) {
+        if (!executarMissao(p, id)) {
+            return;
+        }
+        recompensaPendente(p);
+        if (id == 1) {
+            pausaProfessor(p);
+        }
+        if (p.hp > 0) {
+            entreMissoes(p);
+        }
+        if (p.hp <= 0) {
+            return;
+        }
+        if (id == 4) {
+            processarEventos(p, 2);
+        } else {
+            processarEventos(p, 1);
+        }
+    }
+}
+
+// Mostra resultado sem repetir todas as telas anteriores.
+void mostrarResultadoFinal(jogador &p) {
+    novaTela();
+    cout << "\n====================================" << endl;
+    cout << "             FINAL BOM              " << endl;
+    cout << "====================================" << endl;
+    mostrarPainel(p);
+    cout << "XP final: " << p.xp << " | Nivel: " << p.level << endl;
+}
+
+// Exibe os requisitos reais para liberar a ultima batalha.
+void mostrarRequisitosFinal(jogador &p) {
+    cout << "====================================" << endl;
+    cout << "          BATALHA FINAL             " << endl;
+    cout << "====================================" << endl;
+    mostrarResumo(p);
+    cout << "Feiticos desbloqueados: " << contarFeiticosDesbloqueados()
+         << "/10 (minimo 7)" << endl;
+    cout << "Adversario: " << (campanha.historia == 1 ? "Voldemort" : "Ranrok") << endl;
+}
+
+// Permite recuperar desafios pendentes antes de liberar a batalha.
+bool liberarFinal(jogador &p) {
+    while (p.hp > 0 && !podeEnfrentarChefe()) {
+        novaTela();
+        mostrarRequisitosFinal(p);
+        cout << "Requisitos insuficientes: 4 missoes, 3 eventos, 7 feiticos e os fragmentos." << endl;
+        cout << "2 - Retornar pelo mapa 3 - Professor 0 - Encerrar" << endl;
+        cout << "Escolha antes do final: ";
+        int acao = lerOpcao(0, 3);
+        if (acao == 0) {
+            cout << "Campanha encerrada sem enfrentar o chefe." << endl;
+            return false;
+        }
+        if (acao == 2) {
+            retornarMapa(p);
+        }
+        if (acao == 3) {
+            pausaProfessor(p);
+        }
+    }
+    return p.hp > 0 && podeEnfrentarChefe();
+}
+
+// Escolhe o chefe pela historia.
+bool selecionarChefe(jogador &p) {
+    if (campanha.historia == 1) {
+        cout << "VOLDEMORT" << endl;
+        return desafioNarrativo(p, 6);
+    }
+    cout << "RANROK" << endl;
+    return desafioNarrativo(p, 7);
+}
+
+// Valida requisitos e executa o desafio final automaticamente.
+void batalhaFinal(jogador &p) {
+    if (p.hp <= 0 || campanha.missaoConcluida != 4) {
+        return;
+    }
+    if (!liberarFinal(p)) {
+        return;
+    }
+    novaTela();
+    mostrarRequisitosFinal(p);
+    cout << "Todos os requisitos foram cumpridos!" << endl;
+    cout << "Prepare-se para entrar no Coracao de Hogwarts." << endl;
+    prepararProximaEtapa(p);
+    if (p.hp <= 0) {
+        return;
+    }
+    deslocar(p, "Coracao de Hogwarts");
+    cout << "====================================" << endl;
+    cout << "          BATALHA FINAL             " << endl;
+    cout << "====================================" << endl;
+    if (!selecionarChefe(p)) {
+        return;
+    }
+    mostrarResultadoFinal(p);
+}
+
+// Registra jogador e escolhe casa, historia e personagem.
+int selecionarCampanha() {
+    cout << "====================================" << endl;
+    cout << "    BEM-VINDO A MYSTERY OF HOGWARTS" << endl;
+    cout << "====================================" << endl;
+    cout << "Informe o nome do jogador: ";
+    if (!getline(cin >> ws, campanha.nomeJogador)) {
+        throw runtime_error("Entrada encerrada.");
+    }
+    limparTela();
+    inicio();
+    cout << "OS ECOS DA RESISTENCIA" << endl;
+    cout << "Hogwarts esta sob o controle dos Carrow. Cedrico sobreviveu nesta realidade alternativa." << endl;
+    cout << "O Coracao de Hogwarts despertou, enquanto Harry procura as Horcruxes." << endl;
+    cout << "Personagens: Luna, Neville, Simas, Cedrico" << endl;
+    cout << "Historias: Os Instrumentos Mortais | Os Artificios das Trevas" << endl;
+    novaTela();
+    campanha.casa = escolher_casa();
+    novaTela();
+    campanha.historia = mostrar_historias();
+    novaTela();
+    return escolher_persona();
+}
+
+// Inicia a campanha apos as escolhas.
+void jogarCampanha() {
+    int escolha = selecionarCampanha();
+    jogador &p = personagens[escolha];
+    prepararInicio(p);
+    cout << "\nA sua historia comeca agora..." << endl;
+    novaTela();
+    mostrarMapaAtual();
+    mostrarResumo(p);
+    novaTela();
+    mostrarPainel(p);
+    mostrar_feitico();
+    novaTela();
+    mostrarInventarioCompleto();
+    executarCampanha(p);
+    batalhaFinal(p);
+    if (p.hp <= 0) {
+        cout << "\nGAME OVER - As trevas venceram Hogwarts." << endl;
+    }
+    pausarTela();
+}
+
+// Inicializa e libera os recursos mesmo se a entrada for interrompida.
+int main() {
+    const char *semente = getenv("HOGWARTS_SEED");
+    if (semente) {
+        srand(static_cast<unsigned int>(strtoul(semente, nullptr, 10)));
+    }
+    else {
+        srand(time(0));
+    }
+    cadastrar_feiticos();
+    cadastrar_persona();
+    cadastrar_armadura();
+    try {
+        jogarCampanha();
+    } catch (const runtime_error& erro) {
+        cout << erro.what() << endl;
+    }
+    liberarMemoria();
+    return 0;
+}
