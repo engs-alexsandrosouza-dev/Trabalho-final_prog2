@@ -2653,3 +2653,254 @@ Conversa conversas[11][4][2] = {
         }
     }
 };
+ // Simas
+        {
+            {
+                "Hagrid: Parece um fantasma, mas nao e.",
+                "Perguntar se lembrancas costumam dar trabalho.",
+                "Simas: As minhas normalmente so rendem detencao.\nHagrid: Essa aqui e diferente.",
+                "Perguntar por Bicuco.",
+                "Simas: Primeiro o hipogrifo, depois a aula de fantasmas.\nHagrid: Ele esta ali."
+            },
+            {
+                "Hagrid: Bicuco gostou de voce.",
+                "Fazer uma reverencia exageradamente formal.",
+                "Simas: Finalmente, um publico exigente.\nHagrid: Ele merece respeito.",
+                "Pedir que Hagrid conte a Gina.",
+                "Simas: Quero uma testemunha de que ajudei sem quebrar nada.\nHagrid: Vou contar."
+            }
+        },
+        // Cedrico
+        {
+            {
+                "Hagrid: Nao consigo desfazer sozinho o encantamento.",
+                "Combinar como receber Bicuco.",
+                "Cedrico: Assim que estiver livre, ele precisa de voce.\nHagrid: Estarei aqui.",
+                "Perguntar se outros alunos sabem do problema.",
+                "Cedrico: Alguem deve conhecer a rota de volta.\nHagrid: Ja avisei a resistencia."
+            },
+            {
+                "Hagrid: Obrigado por voltar.",
+                "Compartilhar a responsabilidade.",
+                "Cedrico: Voce ficou com ele durante todo esse tempo.\nHagrid: E agora esta seguro.",
+                "Pedir que avise os demais.",
+                "Cedrico: Precisamos saber se outros ecos aparecerem.\nHagrid: Vou mandar uma mensagem."
+            }
+        }
+    },
+    // Missao 4
+    {
+        // Luna
+        {
+            {
+                "Gina: O subsolo esta reagindo aos fragmentos.",
+                "Perguntar se o castelo sente medo.",
+                "Luna: A pedra parece respirar com dificuldade.\nGina: Entao vamos devolver sua tranquilidade.",
+                "Juntar os fragmentos perto da chave.",
+                "Luna: Eles parecem reconhecer uns aos outros.\nGina: A passagem respondeu."
+            },
+            {
+                "Gina: Temos os tres fragmentos.",
+                "Pedir que guarde a lembranca da noite.",
+                "Luna: Um dia os alunos vao querer saber como foi.\nGina: Nao deixaremos isso desaparecer.",
+                "Perguntar pelos estudantes.",
+                "Luna: Precisam de um lugar onde possam rir.\nGina: Os professores estao com eles."
+            }
+        },
+        // Neville
+        {
+            {
+                "Gina: Os menores chegaram ao refugio.",
+                "Confirmar se todos chegaram.",
+                "Neville: Nao quero que reste ninguem nos corredores.\nGina: Conferimos os nomes.",
+                "Contar que ainda sente medo.",
+                "Neville: Nao tenho certeza de que estou pronto.\nGina: Nao precisa ter certeza de tudo."
+            },
+            {
+                "Gina: A entrada esta aberta.",
+                "Agradecer aos colegas.",
+                "Neville: Nenhum fragmento veio parar aqui sozinho.\nGina: Eles vao gostar de ouvir isso.",
+                "Combinar a mensagem de retorno.",
+                "Neville: Se a moeda esfriar, saberemos que acabou.\nGina: Vou esperar o sinal."
+            }
+        },
+        // Simas
+        {
+            {
+                "Gina: Leia as indicacoes da chave.",
+                "Ler tudo antes de agir.",
+                "Simas: Nao ria. Estou seguindo o manual.\nGina: Vou guardar esse momento.",
+                "Perguntar se a passagem tem saida.",
+                "Simas: Prefiro nao passar a noite dentro de uma parede.\nGina: A chave tambem abre o retorno."
+            },
+            {
+                "Gina: O sentinela voltou ao normal.",
+                "Contar que seguiu as instrucoes.",
+                "Simas: Admito, elas eram uteis.\nGina: Isso merece uma comemoração.",
+                "Perguntar se os outros estao seguros.",
+                "Simas: Brincadeiras depois. Como estao todos?\nGina: Estao protegidos."
+            }
+        },
+        // Cedrico
+        {
+            {
+                "Gina: Voce pode confiar na Armada.",
+                "Aceitar que ela coordene a superficie.",
+                "Cedrico: Entao deixo essa parte com voce.\nGina: Finalmente.",
+                "Perguntar o que os colegas precisam.",
+                "Cedrico: Nao quero decidir por eles.\nGina: Precisam que resolvamos a passagem."
+            },
+            {
+                "Gina: O ultimo fragmento esta seguro.",
+                "Compartilhar o merito.",
+                "Cedrico: Essa descoberta tem muitos autores.\nGina: Vou contar a todos.",
+                "Pedir que a Armada preserve a rota.",
+                "Cedrico: Precisamos poder voltar juntos.\nGina: A passagem ficara protegida."
+            }
+        }
+    },
+    // Minigame 4
+    {
+        // Luna
+        {
+            {
+                "Professor: Qual lembranca ajuda a afastar o frio?",
+                "Conversar sobre a mae.",
+                "Luna: Ela me ensinou a procurar beleza no inesperado.\nProfessor: Guarde essa lembranca.",
+                "Recordar as tardes com amigos.",
+                "Luna: Quando conversamos, o mundo fica menos estranho.\nProfessor: Isso pode ajudar."
+            },
+            {
+                "Professor: O frio passou.",
+                "Perguntar se ele tambem sentiu medo.",
+                "Luna: Nao precisa esconder de mim.\nProfessor: Todos sentimos, Luna.",
+                "Agradecer pela companhia.",
+                "Luna: Foi bom nao ouvir apenas o silencio.\nProfessor: Voce nao estava sozinha."
+            }
+        },
+        // Neville
+        {
+            {
+                "Professor: Nao precisa fingir coragem.",
+                "Falar sobre os pais.",
+                "Neville: Quero continuar tentando por eles.\nProfessor: E por voce tambem.",
+                "Lembrar a Sala Precisa.",
+                "Neville: Meus amigos me esperaram mesmo quando duvidei.\nProfessor: Confie nessa lembranca."
+            },
+            {
+                "Professor: A passagem esta livre.",
+                "Admitir o medo.",
+                "Neville: Ainda estou assustado.\nProfessor: E mesmo assim voce continuou.",
+                "Agradecer pela orientacao.",
+                "Neville: Agora sei que posso pedir ajuda.\nProfessor: Nunca esqueca disso."
+            }
+        },
+        // Simas
+        {
+            {
+                "Professor: Encontre uma lembranca feliz.",
+                "Recordar uma noite em que todos riram.",
+                "Simas: Nem lembro da piada, so das risadas.\nProfessor: Isso basta.",
+                "Falar das conversas em casa.",
+                "Simas: Quero voltar a contar historias sem assustar ninguem.\nProfessor: Pense nisso."
+            },
+            {
+                "Professor: Voce conseguiu se concentrar.",
+                "Fazer uma piada discreta.",
+                "Simas: Nenhum caldeirao foi prejudicado.\nProfessor: Um excelente resultado.",
+                "Falar seriamente sobre os amigos.",
+                "Simas: Quero que todos cheguem ao fim desta noite.\nProfessor: E um bom motivo."
+            }
+        },
+        // Cedrico
+        {
+            {
+                "Professor: Pense em quem o acolheu.",
+                "Lembrar o retorno do torneio.",
+                "Cedrico: Alguem me lembrou que eu nao precisava ser um campeao.\nProfessor: Voce continua sendo voce.",
+                "Lembrar os colegas que ficaram.",
+                "Cedrico: Eles nao exigiram que eu fosse perfeito.\nProfessor: Isso e importante."
+            },
+            {
+                "Professor: Ja pode continuar.",
+                "Agradecer por nao ficar sozinho.",
+                "Cedrico: Achei que devia enfrentar tudo sem ajuda.\nProfessor: Nao precisa.",
+                "Pedir que acompanhe os alunos.",
+                "Cedrico: Eles tambem podem precisar dessa orientacao.\nProfessor: Vou procura-los."
+            }
+        }
+    },
+    // Minigame 5
+    {
+        // Luna
+        {
+            {
+                "Gina: A Armada esta cansada.",
+                "Perguntar o que ouviram da camara.",
+                "Luna: As pedras estao contando alguma coisa?\nGina: O selo vibra quando chegamos perto.",
+                "Perguntar pelos colegas.",
+                "Luna: Precisamos que descansem depois disso.\nGina: Assim que a passagem estiver livre."
+            },
+            {
+                "Gina: A camara esta acessivel.",
+                "Pedir que espere pelo sinal da moeda.",
+                "Luna: Assim a gente nao precisa gritar para o castelo inteiro.\nGina: Combinado.",
+                "Deixar uma mensagem de esperanca.",
+                "Luna: Digam que ainda existem coisas bonitas aqui.\nGina: Vou lembrar."
+            }
+        },
+        // Neville
+        {
+            {
+                "Gina: Precisamos de uma ultima ajuda.",
+                "Ouvir o plano da Armada.",
+                "Neville: O que voces ja conseguiram fazer?\nGina: Mantivemos a rota aberta.",
+                "Perguntar se alguem precisa de apoio.",
+                "Neville: Ninguem deve ficar esquecido.\nGina: Os professores estao chegando."
+            },
+            {
+                "Gina: Voce pode entrar.",
+                "Agradecer a todos.",
+                "Neville: Nao esperem que eu vire outra pessoa.\nGina: Queremos apenas voce.",
+                "Combinar onde se reencontrar.",
+                "Neville: Na Sala Precisa, quando terminar.\nGina: Estaremos la."
+            }
+        },
+        // Simas
+        {
+            {
+                "Gina: Voce demorou.",
+                "Explicar a confusao do caminho.",
+                "Simas: Ate o mapa parecia estar de mau humor.\nGina: Guarde essa desculpa para depois.",
+                "Perguntar qual e a prioridade.",
+                "Simas: Desta vez quero saber o plano inteiro.\nGina: Manter a entrada livre."
+            },
+            {
+                "Gina: Tem certeza sobre o selo?",
+                "Confirmar que vai seguir a chave.",
+                "Simas: Ate eu sei quando parar de improvisar.\nGina: Vou acreditar.",
+                "Pedir que conte as boas noticias.",
+                "Simas: Se tudo der certo, quero uma rodada de risadas.\nGina: Combinado."
+            }
+        },
+        // Cedrico
+        {
+            {
+                "Gina: A entrada esta quase livre.",
+                "Perguntar como ajudar.",
+                "Cedrico: Voces conhecem melhor a situacao.\nGina: Precisamos manter a passagem.",
+                "Pedir que organizem o retorno.",
+                "Cedrico: Ninguem fica sozinho aqui.\nGina: Ja dividimos as tarefas."
+            },
+            {
+                "Gina: A camara esta a sua frente.",
+                "Aceitar a confianca.",
+                "Cedrico: Vou fazer minha parte. Sei que farao a de voces.\nGina: Pode seguir.",
+                "Pedir que avisem os professores.",
+                "Cedrico: O que acontecer la dentro deve ser compartilhado.\nGina: Vou enviar a mensagem."
+            }
+        }
+    },
+
+
+
