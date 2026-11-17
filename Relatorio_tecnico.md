@@ -72,13 +72,6 @@ Para demonstrar diferentes estratégias de localização de elementos, implement
 
 O programa contabiliza as comparações realizadas pelos dois algoritmos, permitindo observar suas diferenças de desempenho.
 
-| Algoritmo | Melhor caso | Caso médio | Pior caso |
-|---|---|---|---|
-| Insertion Sort | O(n) | O(n²) | O(n²) |
-| Quick Sort | O(n log n) | O(n log n) | O(n²) |
-| Busca sequencial | O(1) | O(n) | O(n) |
-| Busca binária | O(1) | O(log n) | O(log n) |
-
 Além do Quick Sort, a recursividade está presente nas operações de inserção, busca, travessia e liberação da árvore binária.
 
 ## 5. Ponteiros e gerenciamento de memória
@@ -92,7 +85,3 @@ A criação dos nós ocorre através do operador `new`, enquanto a liberação d
 Foram desenvolvidas funções específicas para liberar a lista encadeada, a pilha, a fila e a árvore binária. No caso da árvore, utilizamos a liberação recursiva em pós-ordem, garantindo que os nós filhos sejam removidos antes de seus respectivos nós pais.
 
 Esse gerenciamento é importante para evitar que regiões de memória permaneçam alocadas após deixarem de ser utilizadas pelo programa.
-
-## 6. Considerações finais
-
-O desenvolvimento do Mystery of Hogwarts permitiu integrar os dez requisitos técnicos propostos na disciplina em um sistema com diferentes funcionalidades inter
