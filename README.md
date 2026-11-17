@@ -274,49 +274,6 @@ flowchart TD
     G --> N[Busca sequencial e binaria]
 ```
 
-## 8. Execução do projeto
-
-O projeto foi desenvolvido para execução no terminal do Windows, utilizando o compilador G++.
-
-### Requisitos
-
-- Windows.
-- Compilador G++.
-- C++17.
-
-### Compilação
-
-```bash
-g++ -std=c++17 -Wall main.cpp -o Hogwarts.exe
-```
-
-### Execução
-
-```powershell
-.\Hogwarts.exe
-```
-
-Após iniciar o programa, o jogador deverá seguir as instruções apresentadas no terminal.
-
-## 9. Objetivos de aprendizagem
-
-Este projeto foi desenvolvido com o objetivo de praticar os conteúdos estudados durante o semestre:
-
-- Programação estruturada.
-- Manipulação de vetores.
-- Uso de structs.
-- Estruturas condicionais e de repetição.
-- Funções e modularização.
-- Passagem por valor e referência.
-- Ponteiros.
-- Recursividade.
-- Alocação dinâmica de memória.
-- Listas encadeadas.
-- Pilhas e filas.
-- Árvores binárias.
-- Algoritmos de ordenação e busca.
-- Desenvolvimento de jogos em console.
-- Lógica de programação em C++.
 
 ## 10. Considerações finais
 
@@ -337,6 +294,9 @@ O desenvolvimento do projeto foi dividido entre os quatro integrantes, de acordo
 - Elaboração do questionário de seleção das casas.
 - Desenvolvimento das quatro missões principais.
 - Definição das recompensas das missões.
+- Desenvolvimento da estrutura e fluxo de código
+- Relatório técnico
+- Implementação de todas as structs de diálogos
 
 #### Fabricio
 
