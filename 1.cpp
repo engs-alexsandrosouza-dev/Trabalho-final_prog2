@@ -2368,5 +2368,288 @@ Conversa conversas[11][4][2] = {
         }
     },
 
-
-
+// Minigame 4
+    {
+        // Luna
+        {
+            {
+                "Professor: Qual lembranca ajuda a afastar o frio?",
+                "Conversar sobre a mae.",
+                "Luna: Ela me ensinou a procurar beleza no inesperado.\nProfessor: Guarde essa lembranca.",
+                "Recordar as tardes com amigos.",
+                "Luna: Quando conversamos, o mundo fica menos estranho.\nProfessor: Isso pode ajudar."
+            },
+            {
+                "Professor: O frio passou.",
+                "Perguntar se ele tambem sentiu medo.",
+                "Luna: Nao precisa esconder de mim.\nProfessor: Todos sentimos, Luna.",
+                "Agradecer pela companhia.",
+                "Luna: Foi bom nao ouvir apenas o silencio.\nProfessor: Voce nao estava sozinha."
+            }
+        },
+        // Neville
+        {
+            {
+                "Professor: Nao precisa fingir coragem.",
+                "Falar sobre os pais.",
+                "Neville: Quero continuar tentando por eles.\nProfessor: E por voce tambem.",
+                "Lembrar a Sala Precisa.",
+                "Neville: Meus amigos me esperaram mesmo quando duvidei.\nProfessor: Confie nessa lembranca."
+            },
+            {
+                "Professor: A passagem esta livre.",
+                "Admitir o medo.",
+                "Neville: Ainda estou assustado.\nProfessor: E mesmo assim voce continuou.",
+                "Agradecer pela orientacao.",
+                "Neville: Agora sei que posso pedir ajuda.\nProfessor: Nunca esqueca disso."
+            }
+        },
+        // Simas
+        {
+            {
+                "Professor: Encontre uma lembranca feliz.",
+                "Recordar uma noite em que todos riram.",
+                "Simas: Nem lembro da piada, so das risadas.\nProfessor: Isso basta.",
+                "Falar das conversas em casa.",
+                "Simas: Quero voltar a contar historias sem assustar ninguem.\nProfessor: Pense nisso."
+            },
+            {
+                "Professor: Voce conseguiu se concentrar.",
+                "Fazer uma piada discreta.",
+                "Simas: Nenhum caldeirao foi prejudicado.\nProfessor: Um excelente resultado.",
+                "Falar seriamente sobre os amigos.",
+                "Simas: Quero que todos cheguem ao fim desta noite.\nProfessor: E um bom motivo."
+            }
+        },
+        // Cedrico
+        {
+            {
+                "Professor: Pense em quem o acolheu.",
+                "Lembrar o retorno do torneio.",
+                "Cedrico: Alguem me lembrou que eu nao precisava ser um campeao.\nProfessor: Voce continua sendo voce.",
+                "Lembrar os colegas que ficaram.",
+                "Cedrico: Eles nao exigiram que eu fosse perfeito.\nProfessor: Isso e importante."
+            },
+            {
+                "Professor: Ja pode continuar.",
+                "Agradecer por nao ficar sozinho.",
+                "Cedrico: Achei que devia enfrentar tudo sem ajuda.\nProfessor: Nao precisa.",
+                "Pedir que acompanhe os alunos.",
+                "Cedrico: Eles tambem podem precisar dessa orientacao.\nProfessor: Vou procura-los."
+            }
+        }
+    },
+    // Minigame 5
+    {
+        // Luna
+        {
+            {
+                "Gina: A Armada esta cansada.",
+                "Perguntar o que ouviram da camara.",
+                "Luna: As pedras estao contando alguma coisa?\nGina: O selo vibra quando chegamos perto.",
+                "Perguntar pelos colegas.",
+                "Luna: Precisamos que descansem depois disso.\nGina: Assim que a passagem estiver livre."
+            },
+            {
+                "Gina: A camara esta acessivel.",
+                "Pedir que espere pelo sinal da moeda.",
+                "Luna: Assim a gente nao precisa gritar para o castelo inteiro.\nGina: Combinado.",
+                "Deixar uma mensagem de esperanca.",
+                "Luna: Digam que ainda existem coisas bonitas aqui.\nGina: Vou lembrar."
+            }
+        },
+        // Neville
+        {
+            {
+                "Gina: Precisamos de uma ultima ajuda.",
+                "Ouvir o plano da Armada.",
+                "Neville: O que voces ja conseguiram fazer?\nGina: Mantivemos a rota aberta.",
+                "Perguntar se alguem precisa de apoio.",
+                "Neville: Ninguem deve ficar esquecido.\nGina: Os professores estao chegando."
+            },
+            {
+                "Gina: Voce pode entrar.",
+                "Agradecer a todos.",
+                "Neville: Nao esperem que eu vire outra pessoa.\nGina: Queremos apenas voce.",
+                "Combinar onde se reencontrar.",
+                "Neville: Na Sala Precisa, quando terminar.\nGina: Estaremos la."
+            }
+        },
+        // Simas
+        {
+            {
+                "Gina: Voce demorou.",
+                "Explicar a confusao do caminho.",
+                "Simas: Ate o mapa parecia estar de mau humor.\nGina: Guarde essa desculpa para depois.",
+                "Perguntar qual e a prioridade.",
+                "Simas: Desta vez quero saber o plano inteiro.\nGina: Manter a entrada livre."
+            },
+            {
+                "Gina: Tem certeza sobre o selo?",
+                "Confirmar que vai seguir a chave.",
+                "Simas: Ate eu sei quando parar de improvisar.\nGina: Vou acreditar.",
+                "Pedir que conte as boas noticias.",
+                "Simas: Se tudo der certo, quero uma rodada de risadas.\nGina: Combinado."
+            }
+        },
+        // Cedrico
+        {
+            {
+                "Gina: A entrada esta quase livre.",
+                "Perguntar como ajudar.",
+                "Cedrico: Voces conhecem melhor a situacao.\nGina: Precisamos manter a passagem.",
+                "Pedir que organizem o retorno.",
+                "Cedrico: Ninguem fica sozinho aqui.\nGina: Ja dividimos as tarefas."
+            },
+            {
+                "Gina: A camara esta a sua frente.",
+                "Aceitar a confianca.",
+                "Cedrico: Vou fazer minha parte. Sei que farao a de voces.\nGina: Pode seguir.",
+                "Pedir que avisem os professores.",
+                "Cedrico: O que acontecer la dentro deve ser compartilhado.\nGina: Vou enviar a mensagem."
+            }
+        }
+    },
+    // Final Voldemort
+    {
+        // Luna
+        {
+            {
+                "Voldemort: Por que insiste em proteger este lugar?",
+                "Falar das lembrancas do castelo.",
+                "Luna: Ha coisas aqui que voce nunca tentou compreender.\nVoldemort: Lembrancas nao governam magia.",
+                "Falar das pessoas que o frequentam.",
+                "Luna: Hogwarts e mais do que suas paredes.\nVoldemort: Entao nao entendeu seu potencial."
+            },
+            {
+                "Gina: O selo voltou a funcionar.",
+                "Contar que ouviu o castelo.",
+                "Luna: Ele parece menos cansado agora.\nGina: Espero que voce tambem consiga descansar.",
+                "Lembrar que a guerra continua.",
+                "Luna: Por hoje encontramos um pouco de paz.\nGina: Vamos guarda-la."
+            }
+        },
+        // Neville
+        {
+            {
+                "Voldemort: Quem lhe deu o direito de estar aqui?",
+                "Falar da Armada.",
+                "Neville: Nao vim sozinho, mesmo que voce nao veja os outros.\nVoldemort: Aliados sao frageis.",
+                "Falar de sua propria escolha.",
+                "Neville: Nao preciso de um titulo para saber por que vim.\nVoldemort: Palavras vazias."
+            },
+            {
+                "Gina: O vinculo foi rompido.",
+                "Admitir que ainda sente medo.",
+                "Neville: Achei que coragem fosse outra coisa.\nGina: Voce encontrou a sua.",
+                "Agradecer por ela ter esperado.",
+                "Neville: Saber que voces estavam aqui fez diferenca.\nGina: Sempre estaremos juntos."
+            }
+        },
+        // Simas
+        {
+            {
+                "Voldemort: A escola desperdicou seu potencial.",
+                "Questionar a ideia de um trono.",
+                "Simas: Uma escola nao precisa de rei.\nVoldemort: Nao compreende a grandeza.",
+                "Concentrar-se na chave.",
+                "Simas: Vou ouvir as instrucoes em vez do discurso.\nVoldemort: Insolente."
+            },
+            {
+                "Gina: O castelo esta inteiro?",
+                "Contar que seguiu o plano.",
+                "Simas: Uma noite historica para os meus professores.\nGina: Vou anotar.",
+                "Perguntar pelos colegas antes de brincar.",
+                "Simas: Estao todos bem?\nGina: Sim. Agora pode respirar."
+            }
+        },
+        // Cedrico
+        {
+            {
+                "Voldemort: O passado nao lhe ensinou nada?",
+                "Falar do futuro dos alunos.",
+                "Cedrico: Ensinou que o amanha importa.\nVoldemort: O futuro pertence aos fortes.",
+                "Recusar transformar a noite em revanche.",
+                "Cedrico: Nao vim acertar contas pessoais.\nVoldemort: Entao nao sabe o que deseja."
+            },
+            {
+                "Gina: Voce voltou.",
+                "Compartilhar a vitoria.",
+                "Cedrico: Todos fizeram parte do selo.\nGina: E todos precisam saber disso.",
+                "Pedir que os colegas descansem.",
+                "Cedrico: Amanhã ainda vamos precisar uns dos outros.\nGina: Inclusive de voce."
+            }
+        }
+    },
+    // Final Ranrok
+    {
+        // Luna
+        {
+            {
+                "Ranrok: Ninguem se lembra do que nos foi negado.",
+                "Pedir que conte sua historia.",
+                "Luna: Posso ouvir sem concordar com tudo.\nRanrok: Ouvir nao desfaz o passado.",
+                "Questionar a liberdade da fonte.",
+                "Luna: Se ela obedecer apenas a voce, ainda sera livre?\nRanrok: Voce nao conhece nossa historia."
+            },
+            {
+                "Gina: O eco desapareceu.",
+                "Pedir que registrem sua historia.",
+                "Luna: Uma voz nao precisa virar ameaca para ser lembrada.\nGina: Vamos preservar o relato.",
+                "Escutar o silencio da camara.",
+                "Luna: Agora parece um silencio diferente.\nGina: Um silencio tranquilo."
+            }
+        },
+        // Neville
+        {
+            {
+                "Ranrok: Voce sabe o que e ser diminuido?",
+                "Reconhecer a injustica.",
+                "Neville: Sei. Mas nao quero devolver isso aos outros.\nRanrok: Suas palavras nao mudam seculos.",
+                "Falar da responsabilidade atual.",
+                "Neville: Ha estudantes que nao escolheram esse conflito.\nRanrok: E quantos foram esquecidos antes deles?"
+            },
+            {
+                "Gina: A fonte esta protegida.",
+                "Compartilhar o relato de Ranrok.",
+                "Neville: Nao podemos fingir que ele nunca existiu.\nGina: Vamos registrar a historia.",
+                "Refletir sobre a propria coragem.",
+                "Neville: Nao preciso dominar nada para ser importante.\nGina: Nunca precisou."
+            }
+        },
+        // Simas
+        {
+            {
+                "Ranrok: Hoje a magia sera de todos.",
+                "Questionar as consequencias.",
+                "Simas: De todos, inclusive de quem esta em cima desta camara?\nRanrok: O preco nao me interessa.",
+                "Pedir uma explicacao antes do confronto.",
+                "Simas: Por uma vez prefiro uma aula a uma confusao.\nRanrok: Entao escute o que nos foi negado."
+            },
+            {
+                "Gina: O ultimo cristal perdeu a luz.",
+                "Admitir que aprendeu a ter paciencia.",
+                "Simas: Talvez seja uma habilidade que eu devia estudar.\nGina: Finalmente.",
+                "Pedir que guardem a historia.",
+                "Simas: Nao quero que o eco seja a unica coisa lembrada.\nGina: Vou registrar o que aconteceu."
+            }
+        },
+        // Cedrico
+        {
+            {
+                "Ranrok: Quem decidiu que voces merecem magia?",
+                "Reconhecer que nenhuma pessoa deveria decidir.",
+                "Cedrico: A escola tambem precisa aprender com seus erros.\nRanrok: Aprender nao basta.",
+                "Recusar a abertura descontrolada da fonte.",
+                "Cedrico: Nao posso aceitar que outros paguem por isso.\nRanrok: Sempre ha um preco."
+            },
+            {
+                "Gina: O perigo imediato acabou.",
+                "Pedir que investiguem a historia.",
+                "Cedrico: Nao podemos confundir proteger com esquecer.\nGina: Vou conversar com os professores.",
+                "Agradecer aos colegas.",
+                "Cedrico: O selo foi restaurado por todos nos.\nGina: E assim que deve ser contado."
+            }
+        }
+    }
+};
