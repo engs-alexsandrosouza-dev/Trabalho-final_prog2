@@ -7,8 +7,6 @@
 #include <stdexcept>
 #include <thread>
 #include <chrono>
-#include <cstdio>
-#include <io.h>
 using namespace std;
 
 // Prototipo: permite chamar a funcao antes de sua implementacao.
@@ -679,19 +677,21 @@ int lerOpcao(int minimo, int maximo) {
 }
 
 // ==========================================================
-// 8. CONTROLE DE TELA - WINDOWS
+// 8. CONTROLE DE TELA
 // ==========================================================
-// Verifica se o jogo esta em um terminal interativo.
+// O jogo utiliza o terminal interativo.
 bool terminalInterativo() {
-    return _isatty(_fileno(stdin)) && _isatty(_fileno(stdout));
+    return true;
 }
 
-// Limpa apenas a tela do terminal, sem apagar o historico do jogo.
+// Separa as telas com linhas em branco.
 void limparTela() {
-    if (!terminalInterativo() || getenv("HOGWARTS_TESTE")) {
+    if (getenv("HOGWARTS_TESTE")) {
         return;
     }
-    system("cls");
+    for (int i = 0; i < 40; i++) {
+        cout << endl;
+    }
 }
 
 // Aguarda a leitura da tela. Enter avanca; testes nao precisam aguardar.
