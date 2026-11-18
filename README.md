@@ -11,7 +11,7 @@
 
 - Alexsandro
 - Fabricio
-- Lucas
+- Lucas Borille
 - Valentin
 
 ---
